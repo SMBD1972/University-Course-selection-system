@@ -1264,6 +1264,30 @@ public class Manager {
 
             } while (newOk);
 
-        }
-    }
-}
+        } else if (role.equals("Student") || role.equals("2")) {
+            String StudentId = "402170092";
+            String FullName = "SamanBadiee";
+            System.out.println("Your role is Student");
+
+            System.out.print("Please enter Your StudentID : ");
+            String studentIDInput = sc.next();
+            if (studentIDInput.equals(StudentId)) {
+                System.out.println("True");
+                System.out.println("Please enter Your FullName : ");
+                FullNameInput = sc.next();
+                if (FullNameInput.equals("Back")) {
+                    back();
+                } else if (FullNameInput.equals(FullName)) {
+                    Random dd = new Random();
+                    int FirstNumber = dd.nextInt(10);
+                    int SecondNumber = dd.nextInt(10);
+                    System.out.println("Please Write a True answer to show that you are not bot !!");
+                    System.out.println(FirstNumber + " + " + SecondNumber + " = ");
+                    int TrueAnswer = sc.nextInt();
+                    if (TrueAnswer == FirstNumber + SecondNumber) {
+                        System.out.println("     #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#   ");
+                        System.out.println("            Welcome " + FullNameInput);
+                        System.out.println("     #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#   ");
+                    }
+                }
+            }}}}
