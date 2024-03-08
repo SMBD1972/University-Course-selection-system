@@ -2060,7 +2060,6 @@ public class Manager {
                                     System.out.println("Your Courses are : " + StudentCourses + " . The total number of selected courses : " + StudentSumNumberOfCourse);
 
 
-
                                 }
                             }
 
@@ -2175,7 +2174,800 @@ public class Manager {
                             System.out.println("Your Courses are : " + StudentCourses);
 
 
+                        } else if (NextAnswer.equals("Shows Department Courses") || NextAnswer.equals("3")) {
+                            System.out.println("You want to see departments courses . Please Choose a Department that you want :");
+                            System.out.println("( 1: Mathematics , 2 : Computer Engineering ,  3 : Electrical Engineering ,  4 : Mechanical Engineering ) ");
+                            String ChooseDepartment = sc.next();
+                            if (ChooseDepartment.equals("Back")) {
+                                back();
+                            } else if (ChooseDepartment.equals("Mathematics") || ChooseDepartment.equals("1")) {
+                                Mathematics_Department.ShowMCourse();
+                            } else if (ChooseDepartment.equals("ComputerEngineering") || ChooseDepartment.equals("2")) {
+                                Computer_Engineering.ShowCECourse();
+                            } else if (ChooseDepartment.equals("Electrical Engineering") || ChooseDepartment.equals("3")) {
+                                Electrical_Engineering.ShowEECourse();
+                            } else if (ChooseDepartment.equals("Mechanical Engineering") || ChooseDepartment.equals("4")) {
+                                Mechanical_Engineering.ShowMECourse();
+                            }
+
+
+                            System.out.println("Now what do you want to do? ");
+                            System.out.println("1 : Add Course : ");
+                            System.out.println("2 : Delete Course : ");
+                            System.out.println("3 : Show my courses : ");
+                            System.out.println("4 : Back to Main Menu : ");
+                            System.out.println("5 : Back one step : ");
+                            String NewAnswer = sc.next();
+                            if (NewAnswer.equals("1") || NewAnswer.equals("Add Course")) {
+                                if (StudentSumNumberOfCourse >= 20) {
+                                    System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                    back();
+                                } else {
+                                    System.out.println("From which department you want to add course? ");
+                                    System.out.println("( 1: Mathematics , 2 : Computer Engineering ,  3 : Electrical Engineering ,  4 : Mechanical Engineering ) ");
+                                    String NewChooseDepartment = sc.next();
+                                    if (NewChooseDepartment.equals("Back")) {
+                                        back();
+                                    } else if (NewChooseDepartment.equals("Mathematics") || NewChooseDepartment.equals("1")) {
+                                        Mathematics_Department.ShowMCourse();
+                                        System.out.println("Choose Course : ");
+                                        sc.nextLine();
+                                        String ChooseCourse = sc.nextLine();
+                                        if (ChooseCourse.equals("Calculus2") || ChooseCourse.equals(Mathematics_Department.CourseCodeCalculus2())) {
+                                            boolean rabbit = true;
+                                            if ((((CourseStarTimeArray.contains(Mathematics_Department.CourseStartTimeCalculus2())) || (CourseEndTimeArray.contains(Mathematics_Department.CourseEndTimeCalculus2())))
+                                                    && (CourseDayArray.contains(Mathematics_Department.ClassDayCalculus2()))) || ((CourseExamTimeArray.contains(Mathematics_Department.CourseExamTimeCalculus2())) && (CourseExamDayArray.contains(Mathematics_Department.CourseExamDayCalculus2())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+                                            } else {
+
+                                                if (StudentCourses.contains("Calculus2")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (rabbit) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i <= CourseStarTimeArray.size(); i++) {
+                                                        if ((StudentSumNumberOfCourse + Mathematics_Department.NumberOfCourseCalculus2()) > 20) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                                            ok = true;
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Mathematics_Department.CourseStartTimeCalculus2());
+                                                            CourseEndTimeArray.add(Mathematics_Department.CourseEndTimeCalculus2());
+                                                            CourseDayArray.add(Mathematics_Department.ClassDayCalculus2());
+                                                            CourseExamDayArray.add(Mathematics_Department.CourseExamDayCalculus2());
+                                                            CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeCalculus2());
+                                                            StudentCourses.add("Calculus2");
+                                                            Mathematics_Department.AddCalculus2DecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseCalculus2();
+                                                            Calculus2Capacity -= 1;
+                                                            System.out.println("Calculus2 added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            rabbit = false;
+                                                            break;
+
+                                                        } else if (((CourseStarTimeArray.get(i) > Mathematics_Department.CourseStartTimeCalculus2() && CourseEndTimeArray.get(i) < Mathematics_Department.CourseEndTimeCalculus2()) || (((CourseStarTimeArray.get(i) > Mathematics_Department.CourseStartTimeCalculus2())) && (CourseEndTimeArray.get(i) > Mathematics_Department.CourseEndTimeCalculus2()) && (CourseStarTimeArray.get(i) < Mathematics_Department.CourseEndTimeCalculus2()))
+                                                                || (((CourseStarTimeArray.get(i) < Mathematics_Department.CourseStartTimeCalculus2()) && CourseEndTimeArray.get(i) > Mathematics_Department.CourseEndTimeCalculus2()) || ((CourseEndTimeArray.get(i) < Mathematics_Department.CourseEndTimeCalculus2()) &&
+                                                                (CourseStarTimeArray.get(i) < Mathematics_Department.CourseStartTimeCalculus2()) && (CourseEndTimeArray.get(i) > Mathematics_Department.CourseStartTimeCalculus2())))) && (CourseDayArray.contains(Mathematics_Department.ClassDayCalculus2()))) {
+                                                            System.out.println("You are not able to Add course cause of Class time limit !!");
+                                                            ok = true;
+                                                            break;
+                                                        } else {
+                                                            CourseStarTimeArray.add(Mathematics_Department.CourseStartTimeCalculus2());
+                                                            CourseEndTimeArray.add(Mathematics_Department.CourseEndTimeCalculus2());
+                                                            CourseDayArray.add(Mathematics_Department.ClassDayCalculus2());
+                                                            CourseExamDayArray.add(Mathematics_Department.CourseExamDayCalculus2());
+                                                            CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeCalculus2());
+                                                            StudentCourses.add("Calculus2");
+                                                            StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseCalculus2();
+                                                            Mathematics_Department.AddCalculus2DecreaseCapacity();
+                                                            Calculus2Capacity -= 1;
+                                                            System.out.println("Calculus2 added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            rabbit = false;
+                                                            break;
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+
+                                        } else if (ChooseCourse.equals("BasicsOfMathematics") || ChooseCourse.equals(Mathematics_Department.CourseCodeBasicsOfMathematics())) {
+                                            boolean goat = true;
+                                            if (((((CourseStarTimeArray.contains(Mathematics_Department.CourseStartTimeBasicsOfMathematics())) || (CourseEndTimeArray.contains(Mathematics_Department.CourseEndTimeBasicsOfMathematics())))
+                                                    && (CourseDayArray.contains(Mathematics_Department.ClassDayBasicsOfMathematics())))) || ((CourseExamTimeArray.contains(Mathematics_Department.CourseExamTimeBasicsOfMathematics())) && (CourseExamDayArray.contains(Mathematics_Department.CourseExamDayBasicsOfMathematics())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+                                            } else {
+                                                if (StudentCourses.contains("BasicsOfMathematics")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (goat) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i <= CourseStarTimeArray.size(); i++) {
+                                                        if ((StudentSumNumberOfCourse + Mathematics_Department.NumberOfCourseBasicsOfMathematics()) > 20) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                                            ok = true;
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Mathematics_Department.CourseStartTimeBasicsOfMathematics());
+                                                            CourseEndTimeArray.add(Mathematics_Department.CourseEndTimeBasicsOfMathematics());
+                                                            CourseDayArray.add(Mathematics_Department.ClassDayBasicsOfMathematics());
+                                                            CourseExamDayArray.add(Mathematics_Department.CourseExamDayBasicsOfMathematics());
+                                                            CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeBasicsOfMathematics());
+                                                            StudentCourses.add("BasicsOfMathematics");
+                                                            Mathematics_Department.AddBasicsOfMathematicsDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseBasicsOfMathematics();
+                                                            BasicMathCapacity -= 1;
+                                                            System.out.println("Basics Of Mathematics added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            goat = true;
+                                                            break;
+                                                        } else if (((CourseStarTimeArray.get(i) > Mathematics_Department.CourseStartTimeBasicsOfMathematics() && CourseEndTimeArray.get(i) < Mathematics_Department.CourseEndTimeBasicsOfMathematics()) || (((CourseStarTimeArray.get(i) > Mathematics_Department.CourseStartTimeBasicsOfMathematics())) && (CourseEndTimeArray.get(i) > Mathematics_Department.CourseEndTimeBasicsOfMathematics()) && (CourseStarTimeArray.get(i) < Mathematics_Department.CourseEndTimeBasicsOfMathematics()))
+                                                                || (((CourseStarTimeArray.get(i) < Mathematics_Department.CourseStartTimeBasicsOfMathematics()) && CourseEndTimeArray.get(i) > Mathematics_Department.CourseEndTimeBasicsOfMathematics())) || ((CourseEndTimeArray.get(i) < Mathematics_Department.CourseEndTimeBasicsOfMathematics()) &&
+                                                                (CourseStarTimeArray.get(i) < Mathematics_Department.CourseStartTimeBasicsOfMathematics()) && (CourseEndTimeArray.get(i) > Mathematics_Department.CourseStartTimeBasicsOfMathematics()))) && (CourseDayArray.contains(Mathematics_Department.ClassDayBasicsOfMathematics()))) {
+                                                            System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                            ok = true;
+                                                            break;
+                                                        } else {
+                                                            CourseStarTimeArray.add(Mathematics_Department.CourseStartTimeBasicsOfMathematics());
+                                                            CourseEndTimeArray.add(Mathematics_Department.CourseEndTimeBasicsOfMathematics());
+                                                            CourseDayArray.add(Mathematics_Department.ClassDayBasicsOfMathematics());
+                                                            CourseExamDayArray.add(Mathematics_Department.CourseExamDayBasicsOfMathematics());
+                                                            CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeBasicsOfMathematics());
+                                                            StudentCourses.add("BasicsOfMathematics");
+                                                            Mathematics_Department.AddBasicsOfMathematicsDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseBasicsOfMathematics();
+                                                            System.out.println("Basics Of Mathematics added to your courses successfully !!");
+                                                            BasicMathCapacity -= 1;
+                                                            ok = true;
+                                                            yes = false;
+                                                            goat = true;
+                                                            break;
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+
+                                        } else if (ChooseCourse.equals("DifferentialEquations") || ChooseCourse.equals(Mathematics_Department.CpurseCodeDifferential_Equations())) {
+                                            boolean zebra = true;
+                                            if (((((CourseStarTimeArray.contains(Mathematics_Department.CourseStartTimeDifferential_Equations())) || (CourseEndTimeArray.contains(Mathematics_Department.CourseEndTimeDifferential_Equations())))
+                                                    && (CourseDayArray.contains(Mathematics_Department.ClassDayDifferential_Equations())))) || ((CourseExamTimeArray.contains(Mathematics_Department.CourseExamTimeDifferential_Equations())) && (CourseExamDayArray.contains(Mathematics_Department.CourseExamDayDifferential_Equations())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+                                            } else {
+                                                if (StudentCourses.contains("DifferentialEquations")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (zebra) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i <= CourseStarTimeArray.size(); i++) {
+                                                        if (StudentSumNumberOfCourse + Mathematics_Department.NumberOfCourseDifferential_Equations() > 20) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                                            ok = true;
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Mathematics_Department.CourseStartTimeDifferential_Equations());
+                                                            CourseEndTimeArray.add(Mathematics_Department.CourseEndTimeDifferential_Equations());
+                                                            CourseDayArray.add(Mathematics_Department.ClassDayDifferential_Equations());
+                                                            CourseExamDayArray.add(Mathematics_Department.CourseExamDayDifferential_Equations());
+                                                            CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeDifferential_Equations());
+                                                            StudentCourses.add("DifferentialEquations");
+                                                            Mathematics_Department.AddDifferential_EquationsDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseDifferential_Equations();
+                                                            System.out.println("Differential Equations added to your courses successfully !!");
+                                                            Differential_EquationsCapacity -= 1;
+                                                            ok = true;
+                                                            yes = false;
+                                                            zebra = false;
+                                                            break;
+                                                        } else if (((CourseStarTimeArray.get(i) > Mathematics_Department.CourseStartTimeDifferential_Equations() && CourseEndTimeArray.get(i) < Mathematics_Department.CourseEndTimeDifferential_Equations()) || (((CourseStarTimeArray.get(i) > Mathematics_Department.CourseStartTimeDifferential_Equations())) && (CourseEndTimeArray.get(i) > Mathematics_Department.CourseEndTimeDifferential_Equations()) && (CourseStarTimeArray.get(i) < Mathematics_Department.CourseEndTimeDifferential_Equations()))
+                                                                || (((CourseStarTimeArray.get(i) < Mathematics_Department.CourseStartTimeDifferential_Equations()) && CourseEndTimeArray.get(i) > Mathematics_Department.CourseEndTimeDifferential_Equations()) || ((CourseEndTimeArray.get(i) < Mathematics_Department.CourseEndTimeDifferential_Equations()) &&
+                                                                (CourseStarTimeArray.get(i) < Mathematics_Department.CourseStartTimeDifferential_Equations()) && (CourseEndTimeArray.get(i) > Mathematics_Department.CourseStartTimeDifferential_Equations())))) && (CourseDayArray.contains(Mathematics_Department.ClassDayDifferential_Equations()))) {
+                                                            System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                            ok = true;
+                                                            break;
+                                                        } else {
+                                                            CourseStarTimeArray.add(Mathematics_Department.CourseStartTimeDifferential_Equations());
+                                                            CourseEndTimeArray.add(Mathematics_Department.CourseEndTimeDifferential_Equations());
+                                                            CourseDayArray.add(Mathematics_Department.ClassDayDifferential_Equations());
+                                                            CourseExamDayArray.add(Mathematics_Department.CourseExamDayDifferential_Equations());
+                                                            CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeDifferential_Equations());
+                                                            StudentCourses.add("DifferentialEquations");
+                                                            Mathematics_Department.AddDifferential_EquationsDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseDifferential_Equations();
+                                                            Differential_EquationsCapacity -= 1;
+                                                            System.out.println("Differential Equations added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            zebra = false;
+                                                            break;
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+
+                                        }
+
+                                    }
+                                    if (NewChooseDepartment.equals("ComputerEngineering") || NewChooseDepartment.equals("2")) {
+                                        Computer_Engineering.ShowCECourse();
+                                        System.out.println("Choose Course : ");
+                                        sc.nextLine();
+                                        String ChooseCourse = sc.nextLine();
+                                        if (ChooseCourse.equals("AdvanceProgramming") || ChooseCourse.equals("40244")) {
+                                            boolean lion = true;
+                                            if (((((CourseStarTimeArray.contains(Computer_Engineering.CourseStartTimeAdvance_Programming())) || (CourseEndTimeArray.contains(Computer_Engineering.CourseEndTimeAdvance_Programming())))
+                                                    && (CourseDayArray.contains(Computer_Engineering.ClassDayAdvance_Programming())))) || ((CourseExamTimeArray.contains(Computer_Engineering.CourseExamTimeAdvance_Programming())) && (CourseExamDayArray.contains(Computer_Engineering.CourseExamDayAdvance_Programming())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+                                            } else {
+                                                if (StudentCourses.contains("AdvanceProgramming")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (lion) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i <= CourseStarTimeArray.size(); i++) {
+                                                        if ((StudentSumNumberOfCourse + Computer_Engineering.NumberOfCourseAdvance_Programming()) > 20) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                                            ok = true;
+
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Computer_Engineering.CourseStartTimeAdvance_Programming());
+                                                            CourseEndTimeArray.add(Computer_Engineering.CourseEndTimeAdvance_Programming());
+                                                            CourseDayArray.add(Computer_Engineering.ClassDayAdvance_Programming());
+                                                            CourseExamDayArray.add(Computer_Engineering.CourseExamDayAdvance_Programming());
+                                                            CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeAdvance_Programming());
+                                                            StudentCourses.add("AdvanceProgramming");
+                                                            Computer_Engineering.AddAdvance_ProgrammingDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseAdvance_Programming();
+                                                            ApCapacity -= 1;
+                                                            System.out.println("Advance Programming added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            lion = false;
+                                                            break;
+                                                        } else if (((CourseStarTimeArray.get(i) > Computer_Engineering.CourseStartTimeAdvance_Programming() && CourseEndTimeArray.get(i) < Computer_Engineering.CourseEndTimeAdvance_Programming()) || (((CourseStarTimeArray.get(i) > Computer_Engineering.CourseStartTimeAdvance_Programming())) && (CourseEndTimeArray.get(i) > Computer_Engineering.CourseEndTimeAdvance_Programming()) && (CourseStarTimeArray.get(i) < Computer_Engineering.CourseEndTimeAdvance_Programming()))
+                                                                || (((CourseStarTimeArray.get(i) < Computer_Engineering.CourseStartTimeAdvance_Programming()) && CourseEndTimeArray.get(i) > Computer_Engineering.CourseEndTimeAdvance_Programming()) || ((CourseEndTimeArray.get(i) < Computer_Engineering.CourseEndTimeAdvance_Programming()) &&
+                                                                (CourseStarTimeArray.get(i) < Computer_Engineering.CourseStartTimeAdvance_Programming()) && (CourseEndTimeArray.get(i) > Computer_Engineering.CourseStartTimeAdvance_Programming())))) && (CourseDayArray.contains(Computer_Engineering.ClassDayAdvance_Programming()))) {
+                                                            System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                            ok = true;
+                                                            break;
+                                                        } else {
+                                                            CourseStarTimeArray.add(Computer_Engineering.CourseStartTimeAdvance_Programming());
+                                                            CourseEndTimeArray.add(Computer_Engineering.CourseEndTimeAdvance_Programming());
+                                                            CourseDayArray.add(Computer_Engineering.ClassDayAdvance_Programming());
+                                                            Computer_Engineering.AddAdvance_ProgrammingDecreaseCapacity();
+                                                            CourseExamDayArray.add(Computer_Engineering.CourseExamDayAdvance_Programming());
+                                                            CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeAdvance_Programming());
+                                                            StudentCourses.add("AdvanceProgramming");
+                                                            StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseAdvance_Programming();
+                                                            ApCapacity -= 1;
+                                                            System.out.println("Advance Programming added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            lion = false;
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+
+                                            }
+                                        } else if (ChooseCourse.equals("LogicCircuits") || ChooseCourse.equals("40212")) {
+                                            boolean horse = true;
+                                            if (((((CourseStarTimeArray.contains(Computer_Engineering.CourseStartTimeLogic_Circuits())) || (CourseEndTimeArray.contains(Computer_Engineering.CourseEndTimeLogic_Circuits())))
+                                                    && (CourseDayArray.contains(Computer_Engineering.ClassDayLogic_Circuits())))) || ((CourseExamTimeArray.contains(Computer_Engineering.CourseExamTimeLogic_Circuits())) && (CourseExamDayArray.contains(Computer_Engineering.CourseExamDayLogic_Circuits())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+                                            } else {
+                                                if (StudentCourses.contains("LogicCircuits")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (horse) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i <= CourseStarTimeArray.size(); i++) {
+                                                        if ((StudentSumNumberOfCourse + Computer_Engineering.NumberOfCourseLogic_Circuits()) > 20) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                                            ok = true;
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Computer_Engineering.CourseStartTimeLogic_Circuits());
+                                                            CourseEndTimeArray.add(Computer_Engineering.CourseEndTimeLogic_Circuits());
+                                                            CourseDayArray.add(Computer_Engineering.ClassDayLogic_Circuits());
+                                                            CourseExamDayArray.add(Computer_Engineering.CourseExamDayLogic_Circuits());
+                                                            CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeLogic_Circuits());
+                                                            StudentCourses.add("LogicCircuits");
+                                                            Computer_Engineering.AddLogic_CircuitsDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseLogic_Circuits();
+                                                            Logic_CircuitsCapacity -= 1;
+                                                            System.out.println("Logic Circuits added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            horse = false;
+                                                            break;
+                                                        } else if (((CourseStarTimeArray.get(i) > Computer_Engineering.CourseStartTimeLogic_Circuits() && CourseEndTimeArray.get(i) < Computer_Engineering.CourseEndTimeLogic_Circuits()) || (((CourseStarTimeArray.get(i) > Computer_Engineering.CourseStartTimeLogic_Circuits())) && (CourseEndTimeArray.get(i) > Computer_Engineering.CourseEndTimeLogic_Circuits()) && (CourseStarTimeArray.get(i) < Computer_Engineering.CourseEndTimeLogic_Circuits()))
+                                                                || (((CourseStarTimeArray.get(i) < Computer_Engineering.CourseStartTimeLogic_Circuits()) && CourseEndTimeArray.get(i) > Computer_Engineering.CourseEndTimeLogic_Circuits()) || ((CourseEndTimeArray.get(i) < Computer_Engineering.CourseEndTimeLogic_Circuits()) &&
+                                                                (CourseStarTimeArray.get(i) < Computer_Engineering.CourseStartTimeLogic_Circuits()) && (CourseEndTimeArray.get(i) > Computer_Engineering.CourseStartTimeLogic_Circuits())))) && (CourseDayArray.contains(Computer_Engineering.ClassDayLogic_Circuits()))) {
+                                                            System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                            ok = true;
+                                                            break;
+                                                        } else {
+                                                            CourseStarTimeArray.add(Computer_Engineering.CourseStartTimeLogic_Circuits());
+                                                            CourseEndTimeArray.add(Computer_Engineering.CourseEndTimeLogic_Circuits());
+                                                            CourseDayArray.add(Computer_Engineering.ClassDayLogic_Circuits());
+                                                            CourseExamDayArray.add(Computer_Engineering.CourseExamDayLogic_Circuits());
+                                                            CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeLogic_Circuits());
+                                                            StudentCourses.add("LogicCircuits");
+                                                            Computer_Engineering.AddLogic_CircuitsDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseLogic_Circuits();
+                                                            Logic_CircuitsCapacity -= 1;
+                                                            System.out.println("Logic Circuits added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            horse = false;
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        } else if (ChooseCourse.equals("DiscreteStructures") || ChooseCourse.equals("40115")) {
+                                            boolean donkey = true;
+                                            if (((((CourseStarTimeArray.contains(Computer_Engineering.CourseStartTimeDiscrete_Structures())) || (CourseEndTimeArray.contains(Computer_Engineering.CourseEndTimeDiscrete_Structures())))
+                                                    && (CourseDayArray.contains(Computer_Engineering.ClassDayDiscrete_Structures())))) || ((CourseExamTimeArray.contains(Computer_Engineering.CourseExamTimeDiscrete_Structures())) && (CourseExamDayArray.contains(Computer_Engineering.CourseExamDayDiscrete_Structures())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+                                            } else {
+                                                if (StudentCourses.contains("DiscreteStructures")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (donkey) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i <= CourseStarTimeArray.size(); i++) {
+                                                        if ((StudentSumNumberOfCourse + Computer_Engineering.NumberOfCourseDiscrete_Structures()) > 20) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                                            ok = true;
+
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Computer_Engineering.CourseStartTimeDiscrete_Structures());
+                                                            CourseEndTimeArray.add(Computer_Engineering.CourseEndTimeDiscrete_Structures());
+                                                            CourseDayArray.add(Computer_Engineering.ClassDayDiscrete_Structures());
+                                                            CourseExamDayArray.add(Computer_Engineering.CourseExamDayDiscrete_Structures());
+                                                            CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeDiscrete_Structures());
+                                                            StudentCourses.add("DiscreteStructures");
+                                                            Computer_Engineering.AddDiscrete_StructuresDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseDiscrete_Structures();
+                                                            Discrete_StructuresCapacity -= 1;
+                                                            System.out.println("discrete Structures added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            donkey = false;
+                                                            break;
+                                                        } else if (((CourseStarTimeArray.get(i) > Computer_Engineering.CourseStartTimeDiscrete_Structures() && CourseEndTimeArray.get(i) < Computer_Engineering.CourseEndTimeDiscrete_Structures()) || (((CourseStarTimeArray.get(i) > Computer_Engineering.CourseStartTimeDiscrete_Structures())) && (CourseEndTimeArray.get(i) > Computer_Engineering.CourseEndTimeDiscrete_Structures()) && (CourseStarTimeArray.get(i) < Computer_Engineering.CourseEndTimeDiscrete_Structures()))
+                                                                || (((CourseStarTimeArray.get(i) < Computer_Engineering.CourseStartTimeDiscrete_Structures()) && CourseEndTimeArray.get(i) > Computer_Engineering.CourseEndTimeDiscrete_Structures()) || ((CourseEndTimeArray.get(i) < Computer_Engineering.CourseEndTimeDiscrete_Structures()) &&
+                                                                (CourseStarTimeArray.get(i) < Computer_Engineering.CourseStartTimeDiscrete_Structures()) && (CourseEndTimeArray.get(i) > Computer_Engineering.CourseStartTimeDiscrete_Structures())))) && (CourseDayArray.contains(Computer_Engineering.ClassDayDiscrete_Structures()))) {
+                                                            System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                            ok = true;
+                                                            break;
+                                                        } else {
+                                                            CourseStarTimeArray.add(Computer_Engineering.CourseStartTimeDiscrete_Structures());
+                                                            CourseEndTimeArray.add(Computer_Engineering.CourseEndTimeDiscrete_Structures());
+                                                            CourseDayArray.add(Computer_Engineering.ClassDayDiscrete_Structures());
+                                                            CourseExamDayArray.add(Computer_Engineering.CourseExamDayDiscrete_Structures());
+                                                            CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeDiscrete_Structures());
+                                                            StudentCourses.add("DiscreteStructures");
+                                                            Computer_Engineering.AddDiscrete_StructuresDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseDiscrete_Structures();
+                                                            System.out.println("discrete Structures added to your courses successfully !!");
+                                                            Discrete_StructuresCapacity -= 1;
+                                                            ok = true;
+                                                            yes = false;
+                                                            donkey = false;
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    if (NewChooseDepartment.equals("Electrical Engineering") || NewChooseDepartment.equals("3")) {
+                                        Electrical_Engineering.ShowEECourse();
+                                        System.out.println("Choose Course : ");
+                                        sc.nextLine();
+                                        String ChooseCourse = sc.nextLine();
+                                        if (ChooseCourse.equals("Electromagnetism") || ChooseCourse.equals("25733")) {
+                                            boolean caty = true;
+                                            if (((((CourseStarTimeArray.contains(Electrical_Engineering.CourseStartTimeElectromagnetism())) || (CourseEndTimeArray.contains(Electrical_Engineering.CourseEndTimeElectromagnetism())))
+                                                    && (CourseDayArray.contains(Electrical_Engineering.ClassDayElectromagnetism())))) || ((CourseExamTimeArray.contains(Electrical_Engineering.CourseExamTimeElectromagnetism())) && (CourseExamDayArray.contains(Electrical_Engineering.CourseExamDayElectromagnetism())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+                                            } else {
+
+                                                if (StudentCourses.contains("Electromagnetism")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (caty) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i <= CourseStarTimeArray.size(); i++) {
+                                                        if ((StudentSumNumberOfCourse + Electrical_Engineering.NumberOfCourseElectromagnetism()) > 20) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                                            continue;
+
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Electrical_Engineering.CourseStartTimeElectromagnetism());
+                                                            CourseEndTimeArray.add(Electrical_Engineering.CourseEndTimeElectromagnetism());
+                                                            CourseDayArray.add(Electrical_Engineering.ClassDayElectromagnetism());
+                                                            CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectromagnetism());
+                                                            CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectromagnetism());
+                                                            StudentCourses.add("Electromagnetism");
+                                                            Electrical_Engineering.AddElectromagnetismDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectromagnetism();
+                                                            ElectromagnetismCapacity -= 1;
+                                                            System.out.println("Electromagnetism added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            caty = false;
+                                                            break;
+                                                        } else if (((CourseStarTimeArray.get(i) > Electrical_Engineering.CourseStartTimeElectromagnetism() && CourseEndTimeArray.get(i) < Electrical_Engineering.CourseEndTimeElectromagnetism()) || (((CourseStarTimeArray.get(i) > Electrical_Engineering.CourseStartTimeElectromagnetism())) && (CourseEndTimeArray.get(i) > Electrical_Engineering.CourseEndTimeElectromagnetism()) && (CourseStarTimeArray.get(i) < Electrical_Engineering.CourseEndTimeElectromagnetism()))
+                                                                || (((CourseStarTimeArray.get(i) < Electrical_Engineering.CourseStartTimeElectromagnetism()) && CourseEndTimeArray.get(i) > Electrical_Engineering.CourseEndTimeElectromagnetism()) || ((CourseEndTimeArray.get(i) < Electrical_Engineering.CourseEndTimeElectromagnetism()) &&
+                                                                (CourseStarTimeArray.get(i) < Electrical_Engineering.CourseStartTimeElectromagnetism()) && (CourseEndTimeArray.get(i) > Electrical_Engineering.CourseStartTimeElectromagnetism())))) && (CourseDayArray.contains(Electrical_Engineering.ClassDayElectromagnetism()))) {
+                                                            System.out.println("You are not able to Add course cause of class time limit !! ");
+                                                            ok = true;
+                                                            break;
+
+                                                        } else {
+                                                            CourseStarTimeArray.add(Electrical_Engineering.CourseStartTimeElectromagnetism());
+                                                            CourseEndTimeArray.add(Electrical_Engineering.CourseEndTimeElectromagnetism());
+                                                            CourseDayArray.add(Electrical_Engineering.ClassDayElectromagnetism());
+                                                            CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectromagnetism());
+                                                            CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectromagnetism());
+                                                            StudentCourses.add("Electromagnetism");
+                                                            Electrical_Engineering.AddElectromagnetismDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectromagnetism();
+                                                            ElectromagnetismCapacity -= 1;
+                                                            System.out.println("Electromagnetism added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            caty = false;
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+
+                                            }
+                                        } else if (ChooseCourse.equals("Electronics2") || ChooseCourse.equals("25032")) {
+                                            boolean doggy = true;
+                                            if ((((CourseStarTimeArray.contains(Electrical_Engineering.CourseStartTimeElectronics2())) || (CourseEndTimeArray.contains(Electrical_Engineering.CourseEndTimeElectronics2())))
+                                                    && (CourseDayArray.contains(Electrical_Engineering.ClassDayElectronics2()))) || ((CourseExamTimeArray.contains(Electrical_Engineering.CourseExamTimeElectronics2())) && (CourseExamDayArray.contains(Electrical_Engineering.CourseExamDayElectronics2())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+                                            } else {
+                                                if (StudentCourses.contains("Electronics2")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (doggy) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i <= CourseStarTimeArray.size(); i++) {
+                                                        if (((StudentSumNumberOfCourse + Electrical_Engineering.NumberOfCourseElectronics2()) > 20)) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+//                                                                     continue;
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Electrical_Engineering.CourseStartTimeElectronics2());
+                                                            CourseEndTimeArray.add(Electrical_Engineering.CourseEndTimeElectronics2());
+                                                            CourseDayArray.add(Electrical_Engineering.ClassDayElectronics2());
+                                                            CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectronics2());
+                                                            CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectronics2());
+                                                            StudentCourses.add("Electronics2");
+                                                            Electrical_Engineering.AddElectronics2DecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectronics2();
+
+                                                            Electronics2Capacity -= 1;
+                                                            System.out.println("Electronics 2 added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            doggy = false;
+                                                            break;
+
+                                                        } else if (((CourseStarTimeArray.get(i) > Electrical_Engineering.CourseStartTimeElectronics2() && CourseEndTimeArray.get(i) < Electrical_Engineering.CourseEndTimeElectronics2()) || (((CourseStarTimeArray.get(i) > Electrical_Engineering.CourseStartTimeElectronics2())) && (CourseEndTimeArray.get(i) > Electrical_Engineering.CourseEndTimeElectronics2()) && (CourseStarTimeArray.get(i) < Electrical_Engineering.CourseEndTimeElectronics2()))
+                                                                || (((CourseStarTimeArray.get(i) < Electrical_Engineering.CourseStartTimeElectronics2()) && CourseEndTimeArray.get(i) > Electrical_Engineering.CourseEndTimeElectronics2()) || ((CourseEndTimeArray.get(i) < Electrical_Engineering.CourseEndTimeElectronics2()) &&
+                                                                (CourseStarTimeArray.get(i) < Electrical_Engineering.CourseStartTimeElectronics2()) && (CourseEndTimeArray.get(i) > Electrical_Engineering.CourseStartTimeElectronics2())))) && (CourseDayArray.contains(Electrical_Engineering.ClassDayElectronics2()))) {
+                                                            System.out.println("You are not able to Add course cause of class time limit !!");
+                                                            ok = true;
+                                                            break;
+                                                        } else {
+                                                            CourseStarTimeArray.add(Electrical_Engineering.CourseStartTimeElectronics2());
+                                                            CourseEndTimeArray.add(Electrical_Engineering.CourseEndTimeElectronics2());
+                                                            CourseDayArray.add(Electrical_Engineering.ClassDayElectronics2());
+                                                            CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectronics2());
+                                                            CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectronics2());
+                                                            StudentCourses.add("Electronics2");
+                                                            Electrical_Engineering.AddElectronics2DecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectronics2();
+                                                            Electronics2Capacity -= 1;
+                                                            System.out.println("Electronics 2 added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            doggy = false;
+                                                            break;
+
+//
+                                                        }
+
+
+                                                    }
+                                                }
+
+
+                                            }
+                                        } else if (ChooseCourse.equals("BasicsOfElectricalEngineering2") || ChooseCourse.equals("25093")) {
+                                            boolean monkey = true;
+                                            if ((((CourseStarTimeArray.contains(Electrical_Engineering.CourseStartTimeBasicsOfElectricalEngineering2())) || (CourseEndTimeArray.contains(Electrical_Engineering.CourseEndTimeBasicsOfElectricalEngineering2())))
+                                                    && (CourseDayArray.contains(Electrical_Engineering.ClassDayBasicsOfElectricalEngineering2()))) || ((CourseExamTimeArray.contains(Electrical_Engineering.CourseExamTimeBasicsOfElectricalEngineering2())) && (CourseExamDayArray.contains(Electrical_Engineering.CourseExamDayBasicsOfElectricalEngineering2())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+
+                                            } else {
+
+                                                if (StudentCourses.contains("BasicsOfElectricalEngineering2")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (monkey) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i <= CourseStarTimeArray.size(); i++) {
+                                                        if ((StudentSumNumberOfCourse + Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2()) > 20) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                                            ok = true;
+
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Electrical_Engineering.CourseStartTimeBasicsOfElectricalEngineering2());
+                                                            CourseEndTimeArray.add(Electrical_Engineering.CourseEndTimeBasicsOfElectricalEngineering2());
+                                                            CourseDayArray.add(Electrical_Engineering.ClassDayBasicsOfElectricalEngineering2());
+                                                            CourseExamDayArray.add(Electrical_Engineering.CourseExamDayBasicsOfElectricalEngineering2());
+                                                            CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeBasicsOfElectricalEngineering2());
+                                                            StudentCourses.add("BasicsOfElectricalEngineering2");
+                                                            Electrical_Engineering.AddBasicsOfElectricalEngineering2DecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2();
+                                                            BasicsOfElectrical2_Capacity -= 1;
+                                                            System.out.println("Basics of electrical engineering 2 added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            monkey = false;
+                                                            break;
+                                                        } else if (((CourseStarTimeArray.get(i) > Electrical_Engineering.CourseStartTimeBasicsOfElectricalEngineering2() && CourseEndTimeArray.get(i) < Electrical_Engineering.CourseEndTimeBasicsOfElectricalEngineering2()) || (((CourseStarTimeArray.get(i) > Electrical_Engineering.CourseStartTimeBasicsOfElectricalEngineering2())) && (CourseEndTimeArray.get(i) > Electrical_Engineering.CourseEndTimeBasicsOfElectricalEngineering2()) && (CourseStarTimeArray.get(i) < Electrical_Engineering.CourseEndTimeBasicsOfElectricalEngineering2()))
+                                                                || (((CourseStarTimeArray.get(i) < Electrical_Engineering.CourseStartTimeBasicsOfElectricalEngineering2()) && CourseEndTimeArray.get(i) > Electrical_Engineering.CourseEndTimeBasicsOfElectricalEngineering2())) || ((CourseEndTimeArray.get(i) < Electrical_Engineering.CourseEndTimeBasicsOfElectricalEngineering2()) &&
+                                                                (CourseStarTimeArray.get(i) < Electrical_Engineering.CourseStartTimeBasicsOfElectricalEngineering2()) && (CourseEndTimeArray.get(i) > Electrical_Engineering.CourseStartTimeBasicsOfElectricalEngineering2()))) && (CourseDayArray.contains(Electrical_Engineering.ClassDayBasicsOfElectricalEngineering2()))) {
+                                                            System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                            ok = true;
+                                                            break;
+                                                        } else {
+                                                            CourseStarTimeArray.add(Electrical_Engineering.CourseStartTimeBasicsOfElectricalEngineering2());
+                                                            CourseEndTimeArray.add(Electrical_Engineering.CourseEndTimeBasicsOfElectricalEngineering2());
+                                                            CourseDayArray.add(Electrical_Engineering.ClassDayBasicsOfElectricalEngineering2());
+                                                            CourseExamDayArray.add(Electrical_Engineering.CourseExamDayBasicsOfElectricalEngineering2());
+                                                            CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeBasicsOfElectricalEngineering2());
+                                                            StudentCourses.add("BasicsOfElectricalEngineering2");
+                                                            Electrical_Engineering.AddBasicsOfElectricalEngineering2DecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2();
+                                                            BasicsOfElectrical2_Capacity -= 1;
+                                                            System.out.println("Basics of electrical engineering 2 added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            monkey = false;
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    if (NewChooseDepartment.equals("Mechanical Engineering") || NewChooseDepartment.equals("4")) {
+                                        Mechanical_Engineering.ShowMECourse();
+                                        System.out.println("Choose Course : ");
+                                        sc.nextLine();
+                                        String ChooseCourse = sc.nextLine();
+                                        if (ChooseCourse.equals("Thermodynamics2") || ChooseCourse.equals("28162")) {
+                                            boolean fox = true;
+                                            if ((((CourseStarTimeArray.contains(Mechanical_Engineering.CourseStartTimeThermodynamics2())) || (CourseEndTimeArray.contains(Mechanical_Engineering.CourseEndTimeThermodynamics2())))
+                                                    && (CourseDayArray.contains(Mechanical_Engineering.ClassDayThermodynamics2()))) || ((CourseExamTimeArray.contains(Mechanical_Engineering.CourseExamTimeThermodynamics2())) && (CourseExamDayArray.contains(Mechanical_Engineering.CourseExamDayThermodynamics2())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+                                            } else {
+                                                if (StudentCourses.contains("Thermodynamics2")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (fox) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i <= CourseStarTimeArray.size(); i++) {
+                                                        if ((StudentSumNumberOfCourse + Mechanical_Engineering.NumberOfCourseThermodynamics2()) > 20) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                                            ok = true;
+
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Mechanical_Engineering.CourseStartTimeThermodynamics2());
+                                                            CourseEndTimeArray.add(Mechanical_Engineering.CourseEndTimeThermodynamics2());
+                                                            CourseDayArray.add(Mechanical_Engineering.ClassDayThermodynamics2());
+                                                            CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayThermodynamics2());
+                                                            CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeThermodynamics2());
+                                                            StudentCourses.add("Thermodynamics2");
+                                                            Mechanical_Engineering.AddThermodynamics2DecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseThermodynamics2();
+                                                            Thermodynamics2Capacity -= 1;
+                                                            System.out.println("Thermodynamics 2 added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            fox = false;
+                                                            break;
+                                                        } else if (((CourseStarTimeArray.get(i) > Mechanical_Engineering.CourseStartTimeThermodynamics2() && CourseEndTimeArray.get(i) < Mechanical_Engineering.CourseEndTimeThermodynamics2()) || (((CourseStarTimeArray.get(i) > Mechanical_Engineering.CourseStartTimeThermodynamics2())) && (CourseEndTimeArray.get(i) > Mechanical_Engineering.CourseEndTimeThermodynamics2()) && (CourseStarTimeArray.get(i) < Mechanical_Engineering.CourseEndTimeThermodynamics2()))
+                                                                || (((CourseStarTimeArray.get(i) < Mechanical_Engineering.CourseStartTimeThermodynamics2()) && CourseEndTimeArray.get(i) > Mechanical_Engineering.CourseEndTimeThermodynamics2())) || ((CourseEndTimeArray.get(i) < Mechanical_Engineering.CourseEndTimeThermodynamics2()) &&
+                                                                (CourseStarTimeArray.get(i) < Mechanical_Engineering.CourseStartTimeThermodynamics2()) && (CourseEndTimeArray.get(i) > Mechanical_Engineering.CourseStartTimeThermodynamics2()))) && (CourseDayArray.contains(Mechanical_Engineering.ClassDayThermodynamics2()))) {
+                                                            System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                            ok = true;
+                                                            break;
+                                                        } else {
+                                                            CourseStarTimeArray.add(Mechanical_Engineering.CourseStartTimeThermodynamics2());
+                                                            CourseEndTimeArray.add(Mechanical_Engineering.CourseEndTimeThermodynamics2());
+                                                            CourseDayArray.add(Mechanical_Engineering.ClassDayThermodynamics2());
+                                                            CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayThermodynamics2());
+                                                            CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeThermodynamics2());
+                                                            StudentCourses.add("Thermodynamics2");
+                                                            Mechanical_Engineering.AddThermodynamics2DecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseThermodynamics2();
+                                                            Thermodynamics2Capacity -= 1;
+                                                            System.out.println("Thermodynamics 2 added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            fox = false;
+                                                            break;
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+
+                                        } else if (ChooseCourse.equals("Static") || ChooseCourse.equals("28261")) {
+                                            boolean koala = true;
+                                            if ((((CourseStarTimeArray.contains(Mechanical_Engineering.CourseStartTimeStatic())) || (CourseEndTimeArray.contains(Mechanical_Engineering.CourseEndTimeStatic())))
+                                                    && (CourseDayArray.contains(Mechanical_Engineering.ClassDayStatic()))) || ((CourseExamTimeArray.contains(Mechanical_Engineering.CourseExamTimeStatic())) && (CourseExamDayArray.contains(Mechanical_Engineering.CourseExamDayStatic())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+                                            } else {
+                                                if (StudentCourses.contains("Static")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (koala) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i < CourseStarTimeArray.size(); i++) {
+                                                        if ((StudentSumNumberOfCourse + Mechanical_Engineering.NumberOfCourseStatic()) > 20) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                                            ok = true;
+
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Mechanical_Engineering.CourseStartTimeStatic());
+                                                            CourseEndTimeArray.add(Mechanical_Engineering.CourseEndTimeStatic());
+                                                            CourseDayArray.add(Mechanical_Engineering.ClassDayStatic());
+                                                            CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayStatic());
+                                                            CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeStatic());
+                                                            StudentCourses.add("Static");
+                                                            Mechanical_Engineering.AddStaticDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseStatic();
+                                                            StaticCapacity -= 1;
+                                                            System.out.println("Static added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            koala = false;
+                                                            break;
+                                                        } else if (((CourseStarTimeArray.get(i) > Mechanical_Engineering.CourseStartTimeStatic() && CourseEndTimeArray.get(i) < Mechanical_Engineering.CourseEndTimeStatic()) || (((CourseStarTimeArray.get(i) > Mechanical_Engineering.CourseStartTimeStatic())) && (CourseEndTimeArray.get(i) > Mechanical_Engineering.CourseEndTimeStatic()) && (CourseStarTimeArray.get(i) < Mechanical_Engineering.CourseEndTimeStatic()))
+                                                                || (((CourseStarTimeArray.get(i) < Mechanical_Engineering.CourseStartTimeStatic()) && CourseEndTimeArray.get(i) > Mechanical_Engineering.CourseEndTimeStatic())) || ((CourseEndTimeArray.get(i) < Mechanical_Engineering.CourseEndTimeStatic()) &&
+                                                                (CourseStarTimeArray.get(i) < Mechanical_Engineering.CourseStartTimeStatic()) && (CourseEndTimeArray.get(i) > Mechanical_Engineering.CourseStartTimeStatic()))) && (CourseDayArray.contains(Mechanical_Engineering.ClassDayStatic()))) {
+                                                            System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                            ok = true;
+                                                            break;
+                                                        } else {
+                                                            CourseStarTimeArray.add(Mechanical_Engineering.CourseStartTimeStatic());
+                                                            CourseEndTimeArray.add(Mechanical_Engineering.CourseEndTimeStatic());
+                                                            CourseDayArray.add(Mechanical_Engineering.ClassDayStatic());
+                                                            CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayStatic());
+                                                            CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeStatic());
+                                                            StudentCourses.add("Static");
+                                                            Mechanical_Engineering.AddStaticDecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseStatic();
+                                                            StaticCapacity -= 1;
+                                                            System.out.println("Static added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            koala = false;
+                                                            break;
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        } else if (ChooseCourse.equals("ResistanceOfMaterials2") || ChooseCourse.equals("28263")) {
+                                            boolean chicken = true;
+                                            if ((((CourseStarTimeArray.contains(Mechanical_Engineering.CourseStartTimeResistanceOfMaterials2())) || (CourseEndTimeArray.contains(Mechanical_Engineering.CourseEndTimeResistanceOfMaterials2())))
+                                                    && (CourseDayArray.contains(Mechanical_Engineering.ClassDayResistanceOfMaterials2()))) || ((CourseExamTimeArray.contains(Mechanical_Engineering.CourseExamTimeResistanceOfMaterials2())) && (CourseExamDayArray.contains(Mechanical_Engineering.CourseExamDayResistanceOfMaterials2())))) {
+                                                System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                ok = true;
+                                            } else {
+                                                if (StudentCourses.contains("ResistanceOfMaterials2")) {
+                                                    System.out.println("WARNING!! You picked this course.");
+                                                    back();
+                                                } else if (chicken) {
+                                                    CourseStarTimeArray.add(-1.3);
+                                                    CourseEndTimeArray.add(-2.43);
+                                                    for (int i = 1; i <= CourseStarTimeArray.size(); i++) {
+                                                        if ((StudentSumNumberOfCourse + Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2()) > 20) {
+                                                            System.out.println("You are not able to Add course cause of total number of courses limit !! ");
+                                                            ok = true;
+
+                                                        } else if (CourseStarTimeArray.size() == 1 || CourseEndTimeArray.size() == 1) {
+                                                            CourseStarTimeArray.add(Mechanical_Engineering.CourseStartTimeResistanceOfMaterials2());
+                                                            CourseEndTimeArray.add(Mechanical_Engineering.CourseEndTimeResistanceOfMaterials2());
+                                                            CourseDayArray.add(Mechanical_Engineering.ClassDayResistanceOfMaterials2());
+                                                            CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayResistanceOfMaterials2());
+                                                            CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeResistanceOfMaterials2());
+                                                            StudentCourses.add("ResistanceOfMaterials2");
+                                                            Mechanical_Engineering.AddResistanceOfMaterials2DecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2();
+                                                            ResistanceOfMaterials2Capacity -= 1;
+                                                            System.out.println("Resistance of materials 2 added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            chicken = false;
+                                                            break;
+                                                        } else if (((CourseStarTimeArray.get(i) > Mechanical_Engineering.CourseStartTimeResistanceOfMaterials2() && CourseEndTimeArray.get(i) < Mechanical_Engineering.CourseEndTimeResistanceOfMaterials2()) || (((CourseStarTimeArray.get(i) > Mechanical_Engineering.CourseStartTimeResistanceOfMaterials2())) && (CourseEndTimeArray.get(i) > Mechanical_Engineering.CourseEndTimeResistanceOfMaterials2()) && (CourseStarTimeArray.get(i) < Mechanical_Engineering.CourseEndTimeResistanceOfMaterials2()))
+                                                                || (((CourseStarTimeArray.get(i) < Mechanical_Engineering.CourseStartTimeResistanceOfMaterials2()) && CourseEndTimeArray.get(i) > Mechanical_Engineering.CourseEndTimeResistanceOfMaterials2())) || ((CourseEndTimeArray.get(i) < Mechanical_Engineering.CourseEndTimeResistanceOfMaterials2()) &&
+                                                                (CourseStarTimeArray.get(i) < Mechanical_Engineering.CourseStartTimeResistanceOfMaterials2()) && (CourseEndTimeArray.get(i) > Mechanical_Engineering.CourseStartTimeResistanceOfMaterials2()))) && (CourseDayArray.contains(Mechanical_Engineering.ClassDayResistanceOfMaterials2()))) {
+                                                            System.out.println("WARNING!! You are not able to Add this course cause of time limit !!");
+                                                            ok = true;
+                                                            break;
+                                                        } else {
+                                                            CourseStarTimeArray.add(Mechanical_Engineering.CourseStartTimeResistanceOfMaterials2());
+                                                            CourseEndTimeArray.add(Mechanical_Engineering.CourseEndTimeResistanceOfMaterials2());
+                                                            CourseDayArray.add(Mechanical_Engineering.ClassDayResistanceOfMaterials2());
+                                                            CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayResistanceOfMaterials2());
+                                                            CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeResistanceOfMaterials2());
+                                                            StudentCourses.add("ResistanceOfMaterials2");
+                                                            Mechanical_Engineering.AddResistanceOfMaterials2DecreaseCapacity();
+                                                            StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2();
+                                                            ResistanceOfMaterials2Capacity -= 1;
+                                                            System.out.println("Resistance of materials 2 added to your courses successfully !!");
+                                                            ok = true;
+                                                            yes = false;
+                                                            chicken = false;
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    if (NewChooseDepartment.equals("Finish") || NextAnswer.equals("Finish")) {
+                                        System.out.println("Your Courses are : " + StudentCourses + " . The total number of selected courses : " + StudentSumNumberOfCourse);
+
+//                                            break;
+
+                                    }
+                                }
+
+                            }
+
+
                         }
                     }
                 }
-            }}}}
+            }
+        }
+    }}
