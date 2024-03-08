@@ -200,11 +200,83 @@ public class Manager {
                                 System.out.println("Your input is not valid.Please try again !! ");
                                 newOk = true;
                             }
+                        } else if (NextAnswer.equals("Increasing the capacity of courses") || NextAnswer.equals("2")) {
+                            System.out.println("YOu want to Increasing the capacity of courses . Please wait...");
+                            System.out.println("Please choose a Department :  ");
+                            System.out.println("( 1: Mathematics , 2 : Computer Engineering ,  3 : Electrical Engineering ,  4 : Mechanical Engineering ) ");
+                            String NewChooseDepartment = sc.next();
+                            if (NewChooseDepartment.equals("Mathematics") || NewChooseDepartment.equals("1")) {
+                                Mathematics_Department.ShowMCourse();
+                                System.out.println("Choose Course : ");
+                                sc.nextLine();
+                                String ChooseCourse = sc.nextLine();
+                                if (ChooseCourse.equals("Calculus2") || ChooseCourse.equals(Mathematics_Department.CourseCodeCalculus2())) {
+                                    Mathematics_Department.IncreaseCalculus2();
+//                                            System.out.println("");
+//                                            Mathematics_Department.IncreaseCapacityCalculus2();
+//                                            Mathematics_Department.ShowMCourse();
+//                                            CapacityCalculus2.add(0,240);
+
+                                } else if (ChooseCourse.equals("BasicsOfMathematics") || ChooseCourse.equals(Mathematics_Department.CourseCodeBasicsOfMathematics())) {
+//                                            System.out.println("How much ?");
+//                                            int a = sc.nextInt();
+//                                            Mathematics_Department.IncreaseCapacityBasicsOfMathematics(a);
+//                                            Mathematics_Department.ShowMCourse();
+                                    Mathematics_Department.IncreaseBasicsOfMathematics();
+
+                                } else if (ChooseCourse.equals("Differential_Equations") || ChooseCourse.equals(Mathematics_Department.CpurseCodeDifferential_Equations())) {
+                                    Mathematics_Department.IncreaseDifferential_Equations();
+
+
+                                }
+                            } else if (NewChooseDepartment.equals("Computer Engineering") || NewChooseDepartment.equals("2")) {
+                                Computer_Engineering.ShowCECourse();
+                                System.out.println("Choose Course : ");
+                                sc.nextLine();
+                                String ChooseCourse = sc.nextLine();
+                                if (ChooseCourse.equals("Advance_Programming") || ChooseCourse.equals("40244")) {
+                                    Computer_Engineering.IncreaseAdvance_Programming();
+                                } else if (ChooseCourse.equals("LogicCircuits") || ChooseCourse.equals("40212")) {
+                                    Computer_Engineering.IncreaseLogic_Circuits();
+                                } else if (ChooseCourse.equals("DiscreteStructures") || ChooseCourse.equals("40115")) {
+                                    Computer_Engineering.IncreaseDiscrete_Structures();
+                                }
+
+
+                            } else if (NewChooseDepartment.equals("Electrical Engineering") || NewChooseDepartment.equals("3")) {
+                                Electrical_Engineering.ShowEECourse();
+                                System.out.println("Choose Course : ");
+                                sc.nextLine();
+                                String ChooseCourse = sc.nextLine();
+                                if (ChooseCourse.equals("Electromagnetism") || ChooseCourse.equals("25733")) {
+                                    Electrical_Engineering.IncreaseElectromagnetism();
+
+                                } else if (ChooseCourse.equals("Electronics2") || ChooseCourse.equals("25032")) {
+                                    Electrical_Engineering.IncreaseElectronics2();
+                                } else if (ChooseCourse.equals("BasicsOfElectricalEngineering2") || ChooseCourse.equals("25093")) {
+                                    Electrical_Engineering.IncreaseBasicsOfElectricalEngineering2();
+                                }
+
+                            } else if (NewChooseDepartment.equals("Mechanical Engineering") || NewChooseDepartment.equals("4")) {
+                                Mechanical_Engineering.ShowMECourse();
+                                System.out.println("Choose Course : ");
+                                sc.nextLine();
+                                String ChooseCourse = sc.nextLine();
+                                if (ChooseCourse.equals("Thermodynamics2") || ChooseCourse.equals("28162")) {
+                                    Mechanical_Engineering.IncreaseThermodynamics2();
+                                } else if (ChooseCourse.equals("Static") || ChooseCourse.equals("28261")) {
+                                    Mechanical_Engineering.IncreaseStatic();
+                                } else if (ChooseCourse.equals("ResistanceOfMaterials2") || ChooseCourse.equals("28263")) {
+                                    Mechanical_Engineering.IncreaseBasicsOfElectricalEngineering2();
+                                }
+
+                            }
+                        }
+
+                                }
+                            }
                         }
 
                     }
                 }
             }
-        }
-    }
-}
