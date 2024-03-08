@@ -49,8 +49,36 @@ public class Manager {
         int Thermodynamics2Capacity = Mechanical_Engineering.CourseCapacityThermodynamics2();
         int StaticCapacity = Mechanical_Engineering.CourseCapacityStatic();
         int ResistanceOfMaterials2Capacity = Mechanical_Engineering.CourseCapacityResistanceOfMaterials2();
+        ArrayList<String> NameOfStudentInCourseCalculus2 = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseCalculus2 = new ArrayList<String>();
+        ArrayList<String> NameOfStudentInCourseBasicMath = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseBasicMath = new ArrayList<String>();
+        ArrayList<String> NameOfStudentInCourseDifferential_Equations = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseCDifferential_Equations = new ArrayList<String>();
+        ArrayList<String> NameOfStudentInCourseAP = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseAP = new ArrayList<String>();
+        ArrayList<String> NameOfStudentInCourseLogic_Circuits = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseLogic_Circuits = new ArrayList<String>();
+        ArrayList<String> NameOfStudentInCourseDiscrete_Structures = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseDiscrete_Structures = new ArrayList<String>();
+        ArrayList<String> NameOfStudentInCourseElectronics2 = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseElectronics2 = new ArrayList<String>();
+        ArrayList<String> NameOfStudentInCourseElectromagnetism = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseElectromagnetism = new ArrayList<String>();
+        ArrayList<String> NameOfStudentInCourseBasicsOfElectrical2 = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseBasicsOfElectrical2 = new ArrayList<String>();
+        ArrayList<String> NameOfStudentInCourseThermodynamics2 = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseThermodynamics2 = new ArrayList<String>();
+        ArrayList<String> NameOfStudentInCourseStatic = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseStatic = new ArrayList<String>();
+        ArrayList<String> NameOfStudentInCourseResistanceOfMaterials2 = new ArrayList<String>();
+        ArrayList<String> IdOfStudentInCourseResistanceOfMaterials2 = new ArrayList<String>();
+
+
         boolean newYes = true;
         boolean Akbar=true;
+        String StudentId = "402170092";
+        String FullName = "SamanBadiee";
         do {
 
 
@@ -101,7 +129,8 @@ public class Manager {
                                                     System.out.println("1 : Add new Course for department");
                                                     System.out.println("2 : Increasing the capacity of courses");
                                                     System.out.println("3 : Add or Delete Student from Course : ");
-                                                    System.out.println("4 : Shows Department Courses");
+                                                    System.out.println("4 : Show students enrolled in courses : ");
+                                                    System.out.println("5 : Shows Department Courses");
                                                     sc.nextLine();
                                                     String NextAnswer = sc.nextLine();
                                                     if (NextAnswer.equals("Add new Course for department") || NextAnswer.equals("1")) {
@@ -335,6 +364,9 @@ public class Manager {
                                                                                                 CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeCalculus2());
                                                                                                 StudentCourses.add("Calculus2");
                                                                                                 Mathematics_Department.AddCalculus2DecreaseCapacity();
+                                                                                                NameOfStudentInCourseCalculus2.add(FullName);
+                                                                                                IdOfStudentInCourseCalculus2.add(StudentId);
+
                                                                                                 StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseCalculus2();
                                                                                                 Calculus2Capacity -= 1;
                                                                                                 System.out.println("Calculus2 added to your courses successfully !!");
@@ -356,6 +388,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Mathematics_Department.CourseExamDayCalculus2());
                                                                                                 CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeCalculus2());
                                                                                                 StudentCourses.add("Calculus2");
+                                                                                                NameOfStudentInCourseCalculus2.add(FullName);
+                                                                                                IdOfStudentInCourseCalculus2.add(StudentId);
                                                                                                 StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseCalculus2();
                                                                                                 Mathematics_Department.AddCalculus2DecreaseCapacity();
                                                                                                 Calculus2Capacity -= 1;
@@ -397,6 +431,8 @@ public class Manager {
                                                                                                 Mathematics_Department.AddBasicsOfMathematicsDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseBasicsOfMathematics();
                                                                                                 BasicMathCapacity -= 1;
+                                                                                                NameOfStudentInCourseBasicMath.add(FullName);
+                                                                                                IdOfStudentInCourseBasicMath.add(StudentId);
                                                                                                 System.out.println("Basics Of Mathematics added to your courses successfully !!");
                                                                                                 ok = true;
                                                                                                 yes = false;
@@ -419,6 +455,8 @@ public class Manager {
                                                                                                 StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseBasicsOfMathematics();
                                                                                                 System.out.println("Basics Of Mathematics added to your courses successfully !!");
                                                                                                 BasicMathCapacity -= 1;
+                                                                                                NameOfStudentInCourseBasicMath.add(FullName);
+                                                                                                IdOfStudentInCourseBasicMath.add(StudentId);
                                                                                                 ok = true;
                                                                                                 yes = false;
                                                                                                 goat = true;
@@ -453,6 +491,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Mathematics_Department.CourseExamDayDifferential_Equations());
                                                                                                 CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeDifferential_Equations());
                                                                                                 StudentCourses.add("DifferentialEquations");
+                                                                                                NameOfStudentInCourseDifferential_Equations.add(FullName);
+                                                                                                IdOfStudentInCourseCDifferential_Equations.add(StudentId);
                                                                                                 Mathematics_Department.AddDifferential_EquationsDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseDifferential_Equations();
                                                                                                 System.out.println("Differential Equations added to your courses successfully !!");
@@ -477,6 +517,8 @@ public class Manager {
                                                                                                 Mathematics_Department.AddDifferential_EquationsDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseDifferential_Equations();
                                                                                                 Differential_EquationsCapacity -= 1;
+                                                                                                NameOfStudentInCourseDifferential_Equations.add(FullName);
+                                                                                                IdOfStudentInCourseCDifferential_Equations.add(StudentId);
                                                                                                 System.out.println("Differential Equations added to your courses successfully !!");
                                                                                                 ok = true;
                                                                                                 yes = false;
@@ -528,6 +570,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Computer_Engineering.CourseExamDayAdvance_Programming());
                                                                                                 CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeAdvance_Programming());
                                                                                                 StudentCourses.add("AdvanceProgramming");
+                                                                                                NameOfStudentInCourseAP.add(FullName);
+                                                                                                IdOfStudentInCourseAP.add(StudentId);
                                                                                                 Computer_Engineering.AddAdvance_ProgrammingDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseAdvance_Programming();
                                                                                                 ApCapacity -= 1;
@@ -550,6 +594,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Computer_Engineering.CourseExamDayAdvance_Programming());
                                                                                                 CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeAdvance_Programming());
                                                                                                 StudentCourses.add("AdvanceProgramming");
+                                                                                                NameOfStudentInCourseAP.add(FullName);
+                                                                                                IdOfStudentInCourseAP.add(StudentId);
                                                                                                 StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseAdvance_Programming();
                                                                                                 ApCapacity -= 1;
                                                                                                 System.out.println("Advance Programming added to your courses successfully !!");
@@ -588,6 +634,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Computer_Engineering.CourseExamDayLogic_Circuits());
                                                                                                 CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeLogic_Circuits());
                                                                                                 StudentCourses.add("LogicCircuits");
+                                                                                                NameOfStudentInCourseLogic_Circuits.add(FullName);
+                                                                                                IdOfStudentInCourseLogic_Circuits.add(StudentId);
                                                                                                 Computer_Engineering.AddLogic_CircuitsDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseLogic_Circuits();
                                                                                                 Logic_CircuitsCapacity -= 1;
@@ -609,6 +657,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Computer_Engineering.CourseExamDayLogic_Circuits());
                                                                                                 CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeLogic_Circuits());
                                                                                                 StudentCourses.add("LogicCircuits");
+                                                                                                NameOfStudentInCourseLogic_Circuits.add(FullName);
+                                                                                                IdOfStudentInCourseLogic_Circuits.add(StudentId);
                                                                                                 Computer_Engineering.AddLogic_CircuitsDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseLogic_Circuits();
                                                                                                 Logic_CircuitsCapacity -= 1;
@@ -648,6 +698,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Computer_Engineering.CourseExamDayDiscrete_Structures());
                                                                                                 CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeDiscrete_Structures());
                                                                                                 StudentCourses.add("DiscreteStructures");
+                                                                                                NameOfStudentInCourseDiscrete_Structures.add(FullName);
+                                                                                                IdOfStudentInCourseDiscrete_Structures.add(StudentId);
                                                                                                 Computer_Engineering.AddDiscrete_StructuresDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseDiscrete_Structures();
                                                                                                 Discrete_StructuresCapacity -= 1;
@@ -669,6 +721,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Computer_Engineering.CourseExamDayDiscrete_Structures());
                                                                                                 CourseExamTimeArray.add(Computer_Engineering.CourseExamTimeDiscrete_Structures());
                                                                                                 StudentCourses.add("DiscreteStructures");
+                                                                                                NameOfStudentInCourseDiscrete_Structures.add(FullName);
+                                                                                                IdOfStudentInCourseDiscrete_Structures.add(StudentId);
                                                                                                 Computer_Engineering.AddDiscrete_StructuresDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseDiscrete_Structures();
                                                                                                 System.out.println("discrete Structures added to your courses successfully !!");
@@ -722,6 +776,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectromagnetism());
                                                                                                 CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectromagnetism());
                                                                                                 StudentCourses.add("Electromagnetism");
+                                                                                                NameOfStudentInCourseElectromagnetism.add(FullName);
+                                                                                                IdOfStudentInCourseElectromagnetism.add(StudentId);
                                                                                                 Electrical_Engineering.AddElectromagnetismDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectromagnetism();
                                                                                                 ElectromagnetismCapacity -= 1;
@@ -744,6 +800,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectromagnetism());
                                                                                                 CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectromagnetism());
                                                                                                 StudentCourses.add("Electromagnetism");
+                                                                                                NameOfStudentInCourseElectromagnetism.add(FullName);
+                                                                                                IdOfStudentInCourseElectromagnetism.add(StudentId);
                                                                                                 Electrical_Engineering.AddElectromagnetismDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectromagnetism();
                                                                                                 ElectromagnetismCapacity -= 1;
@@ -783,6 +841,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectronics2());
                                                                                                 CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectronics2());
                                                                                                 StudentCourses.add("Electronics2");
+                                                                                                NameOfStudentInCourseElectronics2.add(FullName);
+                                                                                                IdOfStudentInCourseElectronics2.add(StudentId);
                                                                                                 Electrical_Engineering.AddElectronics2DecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectronics2();
 
@@ -806,6 +866,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectronics2());
                                                                                                 CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectronics2());
                                                                                                 StudentCourses.add("Electronics2");
+                                                                                                NameOfStudentInCourseElectronics2.add(FullName);
+                                                                                                IdOfStudentInCourseElectronics2.add(StudentId);
                                                                                                 Electrical_Engineering.AddElectronics2DecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectronics2();
                                                                                                 Electronics2Capacity -= 1;
@@ -855,6 +917,8 @@ public class Manager {
                                                                                                 Electrical_Engineering.AddBasicsOfElectricalEngineering2DecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2();
                                                                                                 BasicsOfElectrical2_Capacity -= 1;
+                                                                                                NameOfStudentInCourseBasicsOfElectrical2.add(FullName);
+                                                                                                IdOfStudentInCourseBasicsOfElectrical2.add(StudentId);
                                                                                                 System.out.println("Basics of electrical engineering 2 added to your courses successfully !!");
                                                                                                 ok = true;
                                                                                                 yes = false;
@@ -876,6 +940,8 @@ public class Manager {
                                                                                                 Electrical_Engineering.AddBasicsOfElectricalEngineering2DecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2();
                                                                                                 BasicsOfElectrical2_Capacity -= 1;
+                                                                                                NameOfStudentInCourseBasicsOfElectrical2.add(FullName);
+                                                                                                IdOfStudentInCourseBasicsOfElectrical2.add(StudentId);
                                                                                                 System.out.println("Basics of electrical engineering 2 added to your courses successfully !!");
                                                                                                 ok = true;
                                                                                                 yes = false;
@@ -928,6 +994,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayThermodynamics2());
                                                                                                 CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeThermodynamics2());
                                                                                                 StudentCourses.add("Thermodynamics2");
+                                                                                                NameOfStudentInCourseThermodynamics2.add(FullName);
+                                                                                                IdOfStudentInCourseThermodynamics2.add(StudentId);
                                                                                                 Mechanical_Engineering.AddThermodynamics2DecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseThermodynamics2();
                                                                                                 Thermodynamics2Capacity -= 1;
@@ -952,6 +1020,8 @@ public class Manager {
                                                                                                 Mechanical_Engineering.AddThermodynamics2DecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseThermodynamics2();
                                                                                                 Thermodynamics2Capacity -= 1;
+                                                                                                NameOfStudentInCourseThermodynamics2.add(FullName);
+                                                                                                IdOfStudentInCourseThermodynamics2.add(StudentId);
                                                                                                 System.out.println("Thermodynamics 2 added to your courses successfully !!");
                                                                                                 ok = true;
                                                                                                 yes = false;
@@ -989,6 +1059,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayStatic());
                                                                                                 CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeStatic());
                                                                                                 StudentCourses.add("Static");
+                                                                                                NameOfStudentInCourseStatic.add(FullName);
+                                                                                                IdOfStudentInCourseStatic.add(StudentId);
                                                                                                 Mechanical_Engineering.AddStaticDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseStatic();
                                                                                                 StaticCapacity -= 1;
@@ -1010,6 +1082,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayStatic());
                                                                                                 CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeStatic());
                                                                                                 StudentCourses.add("Static");
+                                                                                                NameOfStudentInCourseStatic.add(FullName);
+                                                                                                IdOfStudentInCourseStatic.add(StudentId);
                                                                                                 Mechanical_Engineering.AddStaticDecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseStatic();
                                                                                                 StaticCapacity -= 1;
@@ -1049,6 +1123,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayResistanceOfMaterials2());
                                                                                                 CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeResistanceOfMaterials2());
                                                                                                 StudentCourses.add("ResistanceOfMaterials2");
+                                                                                                NameOfStudentInCourseResistanceOfMaterials2.add(FullName);
+                                                                                                IdOfStudentInCourseResistanceOfMaterials2.add(StudentId);
                                                                                                 Mechanical_Engineering.AddResistanceOfMaterials2DecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2();
                                                                                                 ResistanceOfMaterials2Capacity -= 1;
@@ -1070,6 +1146,8 @@ public class Manager {
                                                                                                 CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayResistanceOfMaterials2());
                                                                                                 CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeResistanceOfMaterials2());
                                                                                                 StudentCourses.add("ResistanceOfMaterials2");
+                                                                                                NameOfStudentInCourseResistanceOfMaterials2.add(FullName);
+                                                                                                IdOfStudentInCourseResistanceOfMaterials2.add(StudentId);
                                                                                                 Mechanical_Engineering.AddResistanceOfMaterials2DecreaseCapacity();
                                                                                                 StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2();
                                                                                                 ResistanceOfMaterials2Capacity -= 1;
@@ -1118,6 +1196,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Mathematics_Department.CourseEndTimeCalculus2());
                                                                         CourseExamTimeArray.remove(Mathematics_Department.CourseExamTimeCalculus2());
                                                                         CourseExamDayArray.remove(Mathematics_Department.CourseExamDayCalculus2());
+                                                                        IdOfStudentInCourseCalculus2.remove(StudentId);
+                                                                        NameOfStudentInCourseCalculus2.remove(FullName);
                                                                     }
                                                                     if (DeleteAnswer.equals("BasicsOfMathematics")) {
                                                                         StudentSumNumberOfCourse -= Mathematics_Department.NumberOfCourseBasicsOfMathematics();
@@ -1126,6 +1206,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Mathematics_Department.CourseEndTimeBasicsOfMathematics());
                                                                         CourseExamTimeArray.remove(Mathematics_Department.CourseExamTimeBasicsOfMathematics());
                                                                         CourseExamDayArray.remove(Mathematics_Department.CourseExamDayBasicsOfMathematics());
+                                                                        IdOfStudentInCourseBasicMath.remove(StudentId);
+                                                                        NameOfStudentInCourseBasicMath.remove(FullName);
                                                                     }
                                                                     if (DeleteAnswer.equals("DifferentialEquations")) {
                                                                         StudentSumNumberOfCourse -= Mathematics_Department.NumberOfCourseDifferential_Equations();
@@ -1134,6 +1216,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Mathematics_Department.CourseEndTimeDifferential_Equations());
                                                                         CourseExamTimeArray.remove(Mathematics_Department.CourseExamTimeDifferential_Equations());
                                                                         CourseExamDayArray.remove(Mathematics_Department.CourseExamDayDifferential_Equations());
+                                                                        IdOfStudentInCourseCDifferential_Equations.remove(StudentId);
+                                                                        NameOfStudentInCourseDifferential_Equations.remove(FullName);
                                                                     }
                                                                     if (DeleteAnswer.equals("AdvanceProgramming")) {
                                                                         StudentSumNumberOfCourse -= Computer_Engineering.NumberOfCourseAdvance_Programming();
@@ -1142,6 +1226,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Computer_Engineering.CourseEndTimeAdvance_Programming());
                                                                         CourseExamTimeArray.remove(Computer_Engineering.CourseExamTimeAdvance_Programming());
                                                                         CourseExamDayArray.remove(Computer_Engineering.CourseExamDayAdvance_Programming());
+                                                                        IdOfStudentInCourseAP.remove(StudentId);
+                                                                        NameOfStudentInCourseAP.remove(FullName);
                                                                     }
                                                                     if (DeleteAnswer.equals("LogicCircuits")) {
                                                                         StudentSumNumberOfCourse -= Computer_Engineering.NumberOfCourseLogic_Circuits();
@@ -1150,6 +1236,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Computer_Engineering.CourseEndTimeLogic_Circuits());
                                                                         CourseExamTimeArray.remove(Computer_Engineering.CourseExamTimeLogic_Circuits());
                                                                         CourseExamDayArray.remove(Computer_Engineering.CourseExamDayLogic_Circuits());
+                                                                        IdOfStudentInCourseLogic_Circuits.remove(StudentId);
+                                                                        NameOfStudentInCourseLogic_Circuits.remove(FullName);
                                                                     }
                                                                     if (DeleteAnswer.equals("DiscreteStructures")) {
                                                                         StudentSumNumberOfCourse -= Computer_Engineering.NumberOfCourseDiscrete_Structures();
@@ -1158,6 +1246,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Computer_Engineering.CourseEndTimeDiscrete_Structures());
                                                                         CourseExamTimeArray.remove(Computer_Engineering.CourseExamTimeDiscrete_Structures());
                                                                         CourseExamDayArray.remove(Computer_Engineering.CourseExamDayDiscrete_Structures());
+                                                                        IdOfStudentInCourseDiscrete_Structures.remove(StudentId);
+                                                                        NameOfStudentInCourseDiscrete_Structures.remove(FullName);
                                                                     }
                                                                     if (DeleteAnswer.equals("Electromagnetism")) {
                                                                         StudentSumNumberOfCourse -= Electrical_Engineering.NumberOfCourseElectromagnetism();
@@ -1166,6 +1256,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Electrical_Engineering.CourseEndTimeElectromagnetism());
                                                                         CourseExamTimeArray.remove(Electrical_Engineering.CourseExamTimeElectromagnetism());
                                                                         CourseExamDayArray.remove(Electrical_Engineering.CourseExamDayElectromagnetism());
+                                                                        IdOfStudentInCourseElectromagnetism.remove(StudentId);
+                                                                        NameOfStudentInCourseElectromagnetism.remove(FullName);
                                                                     }
                                                                     if (DeleteAnswer.equals("Electronics2")) {
                                                                         StudentSumNumberOfCourse -= Electrical_Engineering.NumberOfCourseElectronics2();
@@ -1174,6 +1266,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Electrical_Engineering.CourseEndTimeElectronics2());
                                                                         CourseExamTimeArray.remove(Electrical_Engineering.CourseExamTimeElectronics2());
                                                                         CourseExamDayArray.remove(Electrical_Engineering.CourseExamDayElectronics2());
+                                                                        IdOfStudentInCourseElectronics2.remove(StudentId);
+                                                                        NameOfStudentInCourseElectronics2.remove(FullName);
                                                                     }
                                                                     if (DeleteAnswer.equals("BasicsOfElectricalEngineering2")) {
                                                                         StudentSumNumberOfCourse -= Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2();
@@ -1182,6 +1276,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Electrical_Engineering.CourseEndTimeBasicsOfElectricalEngineering2());
                                                                         CourseExamTimeArray.remove(Electrical_Engineering.CourseExamTimeBasicsOfElectricalEngineering2());
                                                                         CourseExamDayArray.remove(Electrical_Engineering.CourseExamDayBasicsOfElectricalEngineering2());
+                                                                        IdOfStudentInCourseBasicsOfElectrical2.remove(StudentId);
+                                                                        NameOfStudentInCourseBasicsOfElectrical2.remove(FullName);
                                                                     }
                                                                     if (DeleteAnswer.equals("Static")) {
                                                                         StudentSumNumberOfCourse -= Mechanical_Engineering.NumberOfCourseStatic();
@@ -1190,6 +1286,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Mechanical_Engineering.CourseEndTimeStatic());
                                                                         CourseExamTimeArray.remove(Mechanical_Engineering.CourseExamTimeStatic());
                                                                         CourseExamDayArray.remove(Mechanical_Engineering.CourseExamDayStatic());
+                                                                        IdOfStudentInCourseStatic.remove(StudentId);
+                                                                        NameOfStudentInCourseStatic.remove(FullName);
                                                                     }
                                                                     if (DeleteAnswer.equals("Thermodynamics2")) {
                                                                         StudentSumNumberOfCourse -= Mechanical_Engineering.NumberOfCourseThermodynamics2();
@@ -1198,6 +1296,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Mechanical_Engineering.CourseEndTimeThermodynamics2());
                                                                         CourseExamTimeArray.remove(Mechanical_Engineering.CourseExamTimeThermodynamics2());
                                                                         CourseExamDayArray.remove(Mechanical_Engineering.CourseExamDayThermodynamics2());
+                                                                        IdOfStudentInCourseThermodynamics2.remove(StudentId);
+                                                                        NameOfStudentInCourseThermodynamics2.remove(FullName);
                                                                     }
                                                                     if (DeleteAnswer.equals("ResistanceOfMaterials2")) {
                                                                         StudentSumNumberOfCourse -= Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2();
@@ -1206,6 +1306,8 @@ public class Manager {
                                                                         CourseEndTimeArray.remove(Mechanical_Engineering.CourseEndTimeResistanceOfMaterials2());
                                                                         CourseExamTimeArray.remove(Mechanical_Engineering.CourseExamTimeResistanceOfMaterials2());
                                                                         CourseExamDayArray.remove(Mechanical_Engineering.CourseExamDayResistanceOfMaterials2());
+                                                                        IdOfStudentInCourseResistanceOfMaterials2.remove(StudentId);
+                                                                        NameOfStudentInCourseResistanceOfMaterials2.remove(FullName);
                                                                     }
                                                                     System.out.println("Delete course from your list successfully !!");
                                                                 } else if (!StudentCourses.contains(DeleteAnswer)) {
@@ -1222,7 +1324,104 @@ public class Manager {
                                                             }
                                                         }
 
-                                                    } else if (NextAnswer.equals("Shows Department Courses") || NextAnswer.equals("4")) {
+                                                    }
+                                                    else if (NextAnswer.equals("Show students enrolled in courses") || NextAnswer.equals("4")){
+                                                        System.out.println("Please enter the Department that you wnat to see enrolled student of : ");
+                                                        System.out.println("( 1: Mathematics , 2 : Computer Engineering ,  3 : Electrical Engineering ,  4 : Mechanical Engineering ) ");
+                                                        String ChooseDepartment = sc.next();
+                                                        if (ChooseDepartment.equals("Mathematics") || ChooseDepartment.equals("1")) {
+                                                            Mathematics_Department.ShowMCourse();
+                                                            System.out.println("Please enter the Course that you want to see enrolled student of : ");
+                                                            String ChooseCourse = sc.next();
+                                                            if (ChooseCourse.equals("Calculus2") || ChooseCourse.equals("22016")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseCalculus2.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseCalculus2 + "    " + IdOfStudentInCourseCalculus2);
+                                                                }
+                                                            }
+                                                            else if (ChooseCourse.equals("BasicsOfMathematics") || ChooseCourse.equals("22142")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseBasicMath.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseBasicMath + "    " + IdOfStudentInCourseBasicMath);
+                                                                }
+                                                            }
+                                                            else if (ChooseCourse.equals("Differential_Equations") || ChooseCourse.equals("22034")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseCDifferential_Equations.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseDifferential_Equations + "    " + IdOfStudentInCourseCDifferential_Equations);
+                                                                }
+                                                            }
+
+                                                            } else if (ChooseDepartment.equals("ComputerEngineering") || ChooseDepartment.equals("2")) {
+
+                                                            Computer_Engineering.ShowCECourse();
+                                                            System.out.println("Please enter the Course that you want to see enrolled student of : ");
+                                                            String ChooseCourse = sc.next();
+                                                            if (ChooseCourse.equals("Advance_Programming") || ChooseCourse.equals("40244")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseAP.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseAP + "    " + IdOfStudentInCourseAP);
+                                                                }
+                                                            }
+                                                            else if (ChooseCourse.equals("Logic_Circuits") || ChooseCourse.equals("40212")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseLogic_Circuits.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseLogic_Circuits + "    " + IdOfStudentInCourseLogic_Circuits);
+                                                                }
+                                                            }
+                                                            else if (ChooseCourse.equals("Discrete_Structures") || ChooseCourse.equals("40115")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseDiscrete_Structures.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseDiscrete_Structures + "    " + IdOfStudentInCourseDiscrete_Structures);
+                                                                }
+                                                            }
+                                                        } else if (ChooseDepartment.equals("Electrical Engineering") || ChooseDepartment.equals("3")) {
+                                                            Electrical_Engineering.ShowEECourse();
+                                                            System.out.println("Please enter the Course that you want to see enrolled student of : ");
+                                                            String ChooseCourse = sc.next();
+                                                            if (ChooseCourse.equals("Electromagnetism") || ChooseCourse.equals("25733")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseElectromagnetism.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseElectromagnetism + "    " + IdOfStudentInCourseElectromagnetism);
+                                                                }
+                                                            }
+                                                            else if (ChooseCourse.equals("Electronics2") || ChooseCourse.equals("25032")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseElectronics2.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseElectronics2 + "    " + IdOfStudentInCourseElectronics2);
+                                                                }
+                                                            }
+                                                            else if (ChooseCourse.equals("BasicsOfElectricalEngineering2") || ChooseCourse.equals("25093")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseBasicsOfElectrical2.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseBasicsOfElectrical2 + "    " + IdOfStudentInCourseBasicsOfElectrical2);
+                                                                }
+                                                            }
+                                                        } else if (ChooseDepartment.equals("Mechanical Engineering") || ChooseDepartment.equals("4")) {
+                                                            Mechanical_Engineering.ShowMECourse();
+                                                            System.out.println("Please enter the Course that you want to see enrolled student of : ");
+                                                            String ChooseCourse = sc.next();
+                                                            if (ChooseCourse.equals("Thermodynamics2") || ChooseCourse.equals("28162")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseThermodynamics2.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseThermodynamics2 + "    " + IdOfStudentInCourseThermodynamics2);
+                                                                }
+                                                            }
+                                                            else if (ChooseCourse.equals("Static") || ChooseCourse.equals("28261")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseStatic.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseStatic + "    " + IdOfStudentInCourseStatic);
+                                                                }
+                                                            }
+                                                            else if (ChooseCourse.equals("ResistanceOfMaterials2") || ChooseCourse.equals("28263")){
+                                                                System.out.println("The Registed Students are : ");
+                                                                for (int i = 0; i<IdOfStudentInCourseResistanceOfMaterials2.size() ; i++){
+                                                                    System.out.println(NameOfStudentInCourseResistanceOfMaterials2 + "    " + IdOfStudentInCourseResistanceOfMaterials2);
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    else if (NextAnswer.equals("Shows Department Courses") || NextAnswer.equals("5")) {
                                                         System.out.println("You want to see Department courses. Please wait...");
                                                         System.out.println("( 1: Mathematics , 2 : Computer Engineering ,  3 : Electrical Engineering ,  4 : Mechanical Engineering ) ");
                                                         System.out.println("Please Choose department : ");
@@ -1275,8 +1474,6 @@ public class Manager {
                             } while (newOk);
 
                         } else if (role.equals("Student") || role.equals("2")) {
-                            String StudentId = "402170092";
-                            String FullName = "SamanBadiee";
                             System.out.println("Your role is Student");
 
                             System.out.print("Please enter Your StudentID : ");
@@ -1352,6 +1549,8 @@ public class Manager {
                                                                             CourseExamDayArray.add(Mathematics_Department.CourseExamDayCalculus2());
                                                                             CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeCalculus2());
                                                                             StudentCourses.add("Calculus2");
+                                                                            NameOfStudentInCourseCalculus2.add(FullName);
+                                                                            IdOfStudentInCourseCalculus2.add(StudentId);
                                                                             Mathematics_Department.AddCalculus2DecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseCalculus2();
                                                                             Calculus2Capacity -= 1;
@@ -1374,6 +1573,8 @@ public class Manager {
                                                                             CourseExamDayArray.add(Mathematics_Department.CourseExamDayCalculus2());
                                                                             CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeCalculus2());
                                                                             StudentCourses.add("Calculus2");
+                                                                            NameOfStudentInCourseCalculus2.add(FullName);
+                                                                            IdOfStudentInCourseCalculus2.add(StudentId);
                                                                             StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseCalculus2();
                                                                             Mathematics_Department.AddCalculus2DecreaseCapacity();
                                                                             Calculus2Capacity -= 1;
@@ -1415,6 +1616,8 @@ public class Manager {
                                                                             Mathematics_Department.AddBasicsOfMathematicsDecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseBasicsOfMathematics();
                                                                             BasicMathCapacity -= 1;
+                                                                            NameOfStudentInCourseBasicMath.add(FullName);
+                                                                            IdOfStudentInCourseBasicMath.add(StudentId);
                                                                             System.out.println("Basics Of Mathematics added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1437,6 +1640,8 @@ public class Manager {
                                                                             StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseBasicsOfMathematics();
                                                                             System.out.println("Basics Of Mathematics added to your courses successfully !!");
                                                                             BasicMathCapacity -= 1;
+                                                                            NameOfStudentInCourseBasicMath.add(FullName);
+                                                                            IdOfStudentInCourseBasicMath.add(StudentId);
                                                                             ok = true;
                                                                             yes = false;
                                                                             goat = true;
@@ -1471,6 +1676,8 @@ public class Manager {
                                                                             CourseExamDayArray.add(Mathematics_Department.CourseExamDayDifferential_Equations());
                                                                             CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeDifferential_Equations());
                                                                             StudentCourses.add("DifferentialEquations");
+                                                                            NameOfStudentInCourseDifferential_Equations.add(FullName);
+                                                                            IdOfStudentInCourseCDifferential_Equations.add(StudentId);
                                                                             Mathematics_Department.AddDifferential_EquationsDecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseDifferential_Equations();
                                                                             System.out.println("Differential Equations added to your courses successfully !!");
@@ -1495,6 +1702,8 @@ public class Manager {
                                                                             Mathematics_Department.AddDifferential_EquationsDecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseDifferential_Equations();
                                                                             Differential_EquationsCapacity -= 1;
+                                                                            NameOfStudentInCourseDifferential_Equations.add(FullName);
+                                                                            IdOfStudentInCourseCDifferential_Equations.add(StudentId);
                                                                             System.out.println("Differential Equations added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1542,6 +1751,8 @@ public class Manager {
                                                                             Computer_Engineering.AddAdvance_ProgrammingDecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseAdvance_Programming();
                                                                             ApCapacity -= 1;
+                                                                            NameOfStudentInCourseAP.add(FullName);
+                                                                            IdOfStudentInCourseAP.add(StudentId);
                                                                             System.out.println("Advance Programming added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1563,6 +1774,8 @@ public class Manager {
                                                                             StudentCourses.add("AdvanceProgramming");
                                                                             StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseAdvance_Programming();
                                                                             ApCapacity -= 1;
+                                                                            NameOfStudentInCourseAP.add(FullName);
+                                                                            IdOfStudentInCourseAP.add(StudentId);
                                                                             System.out.println("Advance Programming added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1600,6 +1813,8 @@ public class Manager {
                                                                             Computer_Engineering.AddLogic_CircuitsDecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseLogic_Circuits();
                                                                             Logic_CircuitsCapacity -= 1;
+                                                                            NameOfStudentInCourseLogic_Circuits.add(FullName);
+                                                                            IdOfStudentInCourseLogic_Circuits.add(StudentId);
                                                                             System.out.println("Logic Circuits added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1621,6 +1836,8 @@ public class Manager {
                                                                             Computer_Engineering.AddLogic_CircuitsDecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseLogic_Circuits();
                                                                             Logic_CircuitsCapacity -= 1;
+                                                                            NameOfStudentInCourseLogic_Circuits.add(FullName);
+                                                                            IdOfStudentInCourseLogic_Circuits.add(StudentId);
                                                                             System.out.println("Logic Circuits added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1658,6 +1875,8 @@ public class Manager {
                                                                             Computer_Engineering.AddDiscrete_StructuresDecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseDiscrete_Structures();
                                                                             Discrete_StructuresCapacity -= 1;
+                                                                            NameOfStudentInCourseDiscrete_Structures.add(FullName);
+                                                                            IdOfStudentInCourseDiscrete_Structures.add(StudentId);
                                                                             System.out.println("discrete Structures added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1680,6 +1899,8 @@ public class Manager {
                                                                             StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseDiscrete_Structures();
                                                                             System.out.println("discrete Structures added to your courses successfully !!");
                                                                             Discrete_StructuresCapacity -= 1;
+                                                                            NameOfStudentInCourseDiscrete_Structures.add(FullName);
+                                                                            IdOfStudentInCourseDiscrete_Structures.add(StudentId);
                                                                             ok = true;
                                                                             yes = false;
                                                                             donkey = false;
@@ -1724,6 +1945,8 @@ public class Manager {
                                                                             Electrical_Engineering.AddElectromagnetismDecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectromagnetism();
                                                                             ElectromagnetismCapacity -= 1;
+                                                                            NameOfStudentInCourseElectromagnetism.add(FullName);
+                                                                            IdOfStudentInCourseElectromagnetism.add(StudentId);
                                                                             System.out.println("Electromagnetism added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1743,6 +1966,8 @@ public class Manager {
                                                                             CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectromagnetism());
                                                                             CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectromagnetism());
                                                                             StudentCourses.add("Electromagnetism");
+                                                                            NameOfStudentInCourseElectromagnetism.add(FullName);
+                                                                            IdOfStudentInCourseElectromagnetism.add(StudentId);
                                                                             Electrical_Engineering.AddElectromagnetismDecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectromagnetism();
                                                                             ElectromagnetismCapacity -= 1;
@@ -1780,6 +2005,8 @@ public class Manager {
                                                                             CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectronics2());
                                                                             CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectronics2());
                                                                             StudentCourses.add("Electronics2");
+                                                                            NameOfStudentInCourseElectronics2.add(FullName);
+                                                                            IdOfStudentInCourseElectronics2.add(StudentId);
                                                                             Electrical_Engineering.AddElectronics2DecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectronics2();
 
@@ -1803,6 +2030,8 @@ public class Manager {
                                                                             CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectronics2());
                                                                             CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectronics2());
                                                                             StudentCourses.add("Electronics2");
+                                                                            NameOfStudentInCourseElectronics2.add(FullName);
+                                                                            IdOfStudentInCourseElectronics2.add(StudentId);
                                                                             Electrical_Engineering.AddElectronics2DecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectronics2();
                                                                             Electronics2Capacity -= 1;
@@ -1851,6 +2080,8 @@ public class Manager {
                                                                             Electrical_Engineering.AddBasicsOfElectricalEngineering2DecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2();
                                                                             BasicsOfElectrical2_Capacity -= 1;
+                                                                            NameOfStudentInCourseBasicsOfElectrical2.add(FullName);
+                                                                            IdOfStudentInCourseBasicsOfElectrical2.add(StudentId);
                                                                             System.out.println("Basics of electrical engineering 2 added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1872,6 +2103,8 @@ public class Manager {
                                                                             Electrical_Engineering.AddBasicsOfElectricalEngineering2DecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2();
                                                                             BasicsOfElectrical2_Capacity -= 1;
+                                                                            NameOfStudentInCourseBasicsOfElectrical2.add(FullName);
+                                                                            IdOfStudentInCourseBasicsOfElectrical2.add(StudentId);
                                                                             System.out.println("Basics of electrical engineering 2 added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1916,6 +2149,8 @@ public class Manager {
                                                                             Mechanical_Engineering.AddThermodynamics2DecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseThermodynamics2();
                                                                             Thermodynamics2Capacity -= 1;
+                                                                            NameOfStudentInCourseThermodynamics2.add(FullName);
+                                                                            IdOfStudentInCourseThermodynamics2.add(StudentId);
                                                                             System.out.println("Thermodynamics 2 added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1937,6 +2172,8 @@ public class Manager {
                                                                             Mechanical_Engineering.AddThermodynamics2DecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseThermodynamics2();
                                                                             Thermodynamics2Capacity -= 1;
+                                                                            NameOfStudentInCourseThermodynamics2.add(FullName);
+                                                                            IdOfStudentInCourseThermodynamics2.add(StudentId);
                                                                             System.out.println("Thermodynamics 2 added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -1973,6 +2210,8 @@ public class Manager {
                                                                             CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayStatic());
                                                                             CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeStatic());
                                                                             StudentCourses.add("Static");
+                                                                            NameOfStudentInCourseStatic.add(FullName);
+                                                                            IdOfStudentInCourseStatic.add(StudentId);
                                                                             Mechanical_Engineering.AddStaticDecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseStatic();
                                                                             StaticCapacity -= 1;
@@ -1994,6 +2233,8 @@ public class Manager {
                                                                             CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayStatic());
                                                                             CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeStatic());
                                                                             StudentCourses.add("Static");
+                                                                            NameOfStudentInCourseStatic.add(FullName);
+                                                                            IdOfStudentInCourseStatic.add(StudentId);
                                                                             Mechanical_Engineering.AddStaticDecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseStatic();
                                                                             StaticCapacity -= 1;
@@ -2035,6 +2276,8 @@ public class Manager {
                                                                             Mechanical_Engineering.AddResistanceOfMaterials2DecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2();
                                                                             ResistanceOfMaterials2Capacity -= 1;
+                                                                            NameOfStudentInCourseResistanceOfMaterials2.add(FullName);
+                                                                            IdOfStudentInCourseResistanceOfMaterials2.add(StudentId);
                                                                             System.out.println("Resistance of materials 2 added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -2056,6 +2299,8 @@ public class Manager {
                                                                             Mechanical_Engineering.AddResistanceOfMaterials2DecreaseCapacity();
                                                                             StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2();
                                                                             ResistanceOfMaterials2Capacity -= 1;
+                                                                            NameOfStudentInCourseResistanceOfMaterials2.add(FullName);
+                                                                            IdOfStudentInCourseResistanceOfMaterials2.add(StudentId);
                                                                             System.out.println("Resistance of materials 2 added to your courses successfully !!");
                                                                             ok = true;
                                                                             yes = false;
@@ -2091,6 +2336,8 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Mathematics_Department.CourseEndTimeCalculus2());
                                                         CourseExamTimeArray.remove(Mathematics_Department.CourseExamTimeCalculus2());
                                                         CourseExamDayArray.remove(Mathematics_Department.CourseExamDayCalculus2());
+                                                        IdOfStudentInCourseCalculus2.remove(StudentId);
+                                                        NameOfStudentInCourseCalculus2.remove(FullName);
                                                     }
                                                     if (DeleteAnswer.equals("BasicsOfMathematics")) {
                                                         StudentSumNumberOfCourse -= Mathematics_Department.NumberOfCourseBasicsOfMathematics();
@@ -2099,6 +2346,8 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Mathematics_Department.CourseEndTimeBasicsOfMathematics());
                                                         CourseExamTimeArray.remove(Mathematics_Department.CourseExamTimeBasicsOfMathematics());
                                                         CourseExamDayArray.remove(Mathematics_Department.CourseExamDayBasicsOfMathematics());
+                                                        IdOfStudentInCourseBasicMath.remove(StudentId);
+                                                        NameOfStudentInCourseBasicMath.remove(FullName);
                                                     }
                                                     if (DeleteAnswer.equals("DifferentialEquations")) {
                                                         StudentSumNumberOfCourse -= Mathematics_Department.NumberOfCourseDifferential_Equations();
@@ -2107,6 +2356,8 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Mathematics_Department.CourseEndTimeDifferential_Equations());
                                                         CourseExamTimeArray.remove(Mathematics_Department.CourseExamTimeDifferential_Equations());
                                                         CourseExamDayArray.remove(Mathematics_Department.CourseExamDayDifferential_Equations());
+                                                        IdOfStudentInCourseCDifferential_Equations.remove(StudentId);
+                                                        NameOfStudentInCourseDifferential_Equations.remove(FullName);
                                                     }
                                                     if (DeleteAnswer.equals("AdvanceProgramming")) {
                                                         StudentSumNumberOfCourse -= Computer_Engineering.NumberOfCourseAdvance_Programming();
@@ -2115,6 +2366,8 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Computer_Engineering.CourseEndTimeAdvance_Programming());
                                                         CourseExamTimeArray.remove(Computer_Engineering.CourseExamTimeAdvance_Programming());
                                                         CourseExamDayArray.remove(Computer_Engineering.CourseExamDayAdvance_Programming());
+                                                        IdOfStudentInCourseAP.remove(StudentId);
+                                                        NameOfStudentInCourseAP.remove(FullName);
                                                     }
                                                     if (DeleteAnswer.equals("LogicCircuits")) {
                                                         StudentSumNumberOfCourse -= Computer_Engineering.NumberOfCourseLogic_Circuits();
@@ -2123,6 +2376,8 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Computer_Engineering.CourseEndTimeLogic_Circuits());
                                                         CourseExamTimeArray.remove(Computer_Engineering.CourseExamTimeLogic_Circuits());
                                                         CourseExamDayArray.remove(Computer_Engineering.CourseExamDayLogic_Circuits());
+                                                        IdOfStudentInCourseLogic_Circuits.remove(StudentId);
+                                                        NameOfStudentInCourseLogic_Circuits.remove(FullName);
                                                     }
                                                     if (DeleteAnswer.equals("DiscreteStructures")) {
                                                         StudentSumNumberOfCourse -= Computer_Engineering.NumberOfCourseDiscrete_Structures();
@@ -2131,6 +2386,8 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Computer_Engineering.CourseEndTimeDiscrete_Structures());
                                                         CourseExamTimeArray.remove(Computer_Engineering.CourseExamTimeDiscrete_Structures());
                                                         CourseExamDayArray.remove(Computer_Engineering.CourseExamDayDiscrete_Structures());
+                                                        IdOfStudentInCourseDiscrete_Structures.remove(StudentId);
+                                                        NameOfStudentInCourseDiscrete_Structures.remove(FullName);
                                                     }
                                                     if (DeleteAnswer.equals("Electromagnetism")) {
                                                         StudentSumNumberOfCourse -= Electrical_Engineering.NumberOfCourseElectromagnetism();
@@ -2139,6 +2396,8 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Electrical_Engineering.CourseEndTimeElectromagnetism());
                                                         CourseExamTimeArray.remove(Electrical_Engineering.CourseExamTimeElectromagnetism());
                                                         CourseExamDayArray.remove(Electrical_Engineering.CourseExamDayElectromagnetism());
+                                                        IdOfStudentInCourseElectromagnetism.remove(StudentId);
+                                                        NameOfStudentInCourseElectromagnetism.remove(FullName);
                                                     }
                                                     if (DeleteAnswer.equals("Electronics2")) {
                                                         StudentSumNumberOfCourse -= Electrical_Engineering.NumberOfCourseElectronics2();
@@ -2147,6 +2406,8 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Electrical_Engineering.CourseEndTimeElectronics2());
                                                         CourseExamTimeArray.remove(Electrical_Engineering.CourseExamTimeElectronics2());
                                                         CourseExamDayArray.remove(Electrical_Engineering.CourseExamDayElectronics2());
+                                                        IdOfStudentInCourseElectronics2.remove(StudentId);
+                                                        NameOfStudentInCourseElectronics2.remove(FullName);
                                                     }
                                                     if (DeleteAnswer.equals("BasicsOfElectricalEngineering2")) {
                                                         StudentSumNumberOfCourse -= Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2();
@@ -2155,6 +2416,8 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Electrical_Engineering.CourseEndTimeBasicsOfElectricalEngineering2());
                                                         CourseExamTimeArray.remove(Electrical_Engineering.CourseExamTimeBasicsOfElectricalEngineering2());
                                                         CourseExamDayArray.remove(Electrical_Engineering.CourseExamDayBasicsOfElectricalEngineering2());
+                                                        IdOfStudentInCourseBasicsOfElectrical2.remove(StudentId);
+                                                        NameOfStudentInCourseBasicsOfElectrical2.remove(FullName);
                                                     }
                                                     if (DeleteAnswer.equals("Static")) {
                                                         StudentSumNumberOfCourse -= Mechanical_Engineering.NumberOfCourseStatic();
@@ -2163,6 +2426,8 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Mechanical_Engineering.CourseEndTimeStatic());
                                                         CourseExamTimeArray.remove(Mechanical_Engineering.CourseExamTimeStatic());
                                                         CourseExamDayArray.remove(Mechanical_Engineering.CourseExamDayStatic());
+                                                        IdOfStudentInCourseStatic.remove(StudentId);
+                                                        NameOfStudentInCourseStatic.remove(FullName);
                                                     }
                                                     if (DeleteAnswer.equals("Thermodynamics2")) {
                                                         StudentSumNumberOfCourse -= Mechanical_Engineering.NumberOfCourseThermodynamics2();
@@ -2171,6 +2436,8 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Mechanical_Engineering.CourseEndTimeThermodynamics2());
                                                         CourseExamTimeArray.remove(Mechanical_Engineering.CourseExamTimeThermodynamics2());
                                                         CourseExamDayArray.remove(Mechanical_Engineering.CourseExamDayThermodynamics2());
+                                                        IdOfStudentInCourseThermodynamics2.remove(StudentId);
+                                                        NameOfStudentInCourseThermodynamics2.remove(FullName);
                                                     }
                                                     if (DeleteAnswer.equals("ResistanceOfMaterials2")) {
                                                         StudentSumNumberOfCourse -= Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2();
@@ -2179,13 +2446,14 @@ public class Manager {
                                                         CourseEndTimeArray.remove(Mechanical_Engineering.CourseEndTimeResistanceOfMaterials2());
                                                         CourseExamTimeArray.remove(Mechanical_Engineering.CourseExamTimeResistanceOfMaterials2());
                                                         CourseExamDayArray.remove(Mechanical_Engineering.CourseExamDayResistanceOfMaterials2());
+                                                        IdOfStudentInCourseResistanceOfMaterials2.remove(StudentId);
+                                                        NameOfStudentInCourseResistanceOfMaterials2.remove(FullName);
                                                     }
                                                     System.out.println("Delete course from your list successfully !!");
                                                 } else if (!StudentCourses.contains(DeleteAnswer)) {
                                                     System.out.println("You do not have this course in your List !!");
                                                 }
                                                 System.out.println("Your Courses are : " + StudentCourses);
-
 
                                             } else if (NextAnswer.equals("Shows Department Courses") || NextAnswer.equals("3")) {
                                                 System.out.println("You want to see departments courses . Please Choose a Department that you want :");
@@ -2253,6 +2521,8 @@ public class Manager {
                                                                                     CourseExamDayArray.add(Mathematics_Department.CourseExamDayCalculus2());
                                                                                     CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeCalculus2());
                                                                                     StudentCourses.add("Calculus2");
+                                                                                    NameOfStudentInCourseCalculus2.add(FullName);
+                                                                                    IdOfStudentInCourseCalculus2.add(StudentId);
                                                                                     Mathematics_Department.AddCalculus2DecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseCalculus2();
                                                                                     Calculus2Capacity -= 1;
@@ -2275,6 +2545,8 @@ public class Manager {
                                                                                     CourseExamDayArray.add(Mathematics_Department.CourseExamDayCalculus2());
                                                                                     CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeCalculus2());
                                                                                     StudentCourses.add("Calculus2");
+                                                                                    NameOfStudentInCourseCalculus2.add(FullName);
+                                                                                    IdOfStudentInCourseCalculus2.add(StudentId);
                                                                                     StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseCalculus2();
                                                                                     Mathematics_Department.AddCalculus2DecreaseCapacity();
                                                                                     Calculus2Capacity -= 1;
@@ -2316,6 +2588,8 @@ public class Manager {
                                                                                     Mathematics_Department.AddBasicsOfMathematicsDecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseBasicsOfMathematics();
                                                                                     BasicMathCapacity -= 1;
+                                                                                    NameOfStudentInCourseBasicMath.add(FullName);
+                                                                                    IdOfStudentInCourseBasicMath.add(StudentId);
                                                                                     System.out.println("Basics Of Mathematics added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2338,6 +2612,8 @@ public class Manager {
                                                                                     StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseBasicsOfMathematics();
                                                                                     System.out.println("Basics Of Mathematics added to your courses successfully !!");
                                                                                     BasicMathCapacity -= 1;
+                                                                                    NameOfStudentInCourseBasicMath.add(FullName);
+                                                                                    IdOfStudentInCourseBasicMath.add(StudentId);
                                                                                     ok = true;
                                                                                     yes = false;
                                                                                     goat = true;
@@ -2372,6 +2648,8 @@ public class Manager {
                                                                                     CourseExamDayArray.add(Mathematics_Department.CourseExamDayDifferential_Equations());
                                                                                     CourseExamTimeArray.add(Mathematics_Department.CourseExamTimeDifferential_Equations());
                                                                                     StudentCourses.add("DifferentialEquations");
+                                                                                    NameOfStudentInCourseDifferential_Equations.add(FullName);
+                                                                                    IdOfStudentInCourseCDifferential_Equations.add(StudentId);
                                                                                     Mathematics_Department.AddDifferential_EquationsDecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseDifferential_Equations();
                                                                                     System.out.println("Differential Equations added to your courses successfully !!");
@@ -2396,6 +2674,8 @@ public class Manager {
                                                                                     Mathematics_Department.AddDifferential_EquationsDecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Mathematics_Department.NumberOfCourseDifferential_Equations();
                                                                                     Differential_EquationsCapacity -= 1;
+                                                                                    NameOfStudentInCourseDifferential_Equations.add(FullName);
+                                                                                    IdOfStudentInCourseCDifferential_Equations.add(StudentId);
                                                                                     System.out.println("Differential Equations added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2443,6 +2723,8 @@ public class Manager {
                                                                                     Computer_Engineering.AddAdvance_ProgrammingDecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseAdvance_Programming();
                                                                                     ApCapacity -= 1;
+                                                                                    NameOfStudentInCourseAP.add(FullName);
+                                                                                    IdOfStudentInCourseAP.add(StudentId);
                                                                                     System.out.println("Advance Programming added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2464,6 +2746,8 @@ public class Manager {
                                                                                     StudentCourses.add("AdvanceProgramming");
                                                                                     StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseAdvance_Programming();
                                                                                     ApCapacity -= 1;
+                                                                                    NameOfStudentInCourseAP.add(FullName);
+                                                                                    IdOfStudentInCourseAP.add(StudentId);
                                                                                     System.out.println("Advance Programming added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2501,6 +2785,8 @@ public class Manager {
                                                                                     Computer_Engineering.AddLogic_CircuitsDecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseLogic_Circuits();
                                                                                     Logic_CircuitsCapacity -= 1;
+                                                                                    NameOfStudentInCourseLogic_Circuits.add(FullName);
+                                                                                    IdOfStudentInCourseLogic_Circuits.add(StudentId);
                                                                                     System.out.println("Logic Circuits added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2522,6 +2808,8 @@ public class Manager {
                                                                                     Computer_Engineering.AddLogic_CircuitsDecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseLogic_Circuits();
                                                                                     Logic_CircuitsCapacity -= 1;
+                                                                                    NameOfStudentInCourseLogic_Circuits.add(FullName);
+                                                                                    IdOfStudentInCourseLogic_Circuits.add(StudentId);
                                                                                     System.out.println("Logic Circuits added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2559,6 +2847,8 @@ public class Manager {
                                                                                     Computer_Engineering.AddDiscrete_StructuresDecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseDiscrete_Structures();
                                                                                     Discrete_StructuresCapacity -= 1;
+                                                                                    NameOfStudentInCourseDiscrete_Structures.add(FullName);
+                                                                                    IdOfStudentInCourseDiscrete_Structures.add(StudentId);
                                                                                     System.out.println("discrete Structures added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2581,6 +2871,8 @@ public class Manager {
                                                                                     StudentSumNumberOfCourse += Computer_Engineering.NumberOfCourseDiscrete_Structures();
                                                                                     System.out.println("discrete Structures added to your courses successfully !!");
                                                                                     Discrete_StructuresCapacity -= 1;
+                                                                                    NameOfStudentInCourseDiscrete_Structures.add(FullName);
+                                                                                    IdOfStudentInCourseDiscrete_Structures.add(StudentId);
                                                                                     ok = true;
                                                                                     yes = false;
                                                                                     donkey = false;
@@ -2625,6 +2917,8 @@ public class Manager {
                                                                                     Electrical_Engineering.AddElectromagnetismDecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectromagnetism();
                                                                                     ElectromagnetismCapacity -= 1;
+                                                                                    NameOfStudentInCourseElectromagnetism.add(FullName);
+                                                                                    IdOfStudentInCourseElectromagnetism.add(StudentId);
                                                                                     System.out.println("Electromagnetism added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2644,6 +2938,8 @@ public class Manager {
                                                                                     CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectromagnetism());
                                                                                     CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectromagnetism());
                                                                                     StudentCourses.add("Electromagnetism");
+                                                                                    NameOfStudentInCourseElectromagnetism.add(FullName);
+                                                                                    IdOfStudentInCourseElectromagnetism.add(StudentId);
                                                                                     Electrical_Engineering.AddElectromagnetismDecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectromagnetism();
                                                                                     ElectromagnetismCapacity -= 1;
@@ -2681,6 +2977,8 @@ public class Manager {
                                                                                     CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectronics2());
                                                                                     CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectronics2());
                                                                                     StudentCourses.add("Electronics2");
+                                                                                    NameOfStudentInCourseElectronics2.add(FullName);
+                                                                                    IdOfStudentInCourseElectronics2.add(StudentId);
                                                                                     Electrical_Engineering.AddElectronics2DecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectronics2();
 
@@ -2704,6 +3002,8 @@ public class Manager {
                                                                                     CourseExamDayArray.add(Electrical_Engineering.CourseExamDayElectronics2());
                                                                                     CourseExamTimeArray.add(Electrical_Engineering.CourseExamTimeElectronics2());
                                                                                     StudentCourses.add("Electronics2");
+                                                                                    NameOfStudentInCourseElectronics2.add(FullName);
+                                                                                    IdOfStudentInCourseElectronics2.add(StudentId);
                                                                                     Electrical_Engineering.AddElectronics2DecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseElectronics2();
                                                                                     Electronics2Capacity -= 1;
@@ -2752,6 +3052,8 @@ public class Manager {
                                                                                     Electrical_Engineering.AddBasicsOfElectricalEngineering2DecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2();
                                                                                     BasicsOfElectrical2_Capacity -= 1;
+                                                                                    NameOfStudentInCourseBasicsOfElectrical2.add(FullName);
+                                                                                    IdOfStudentInCourseBasicsOfElectrical2.add(StudentId);
                                                                                     System.out.println("Basics of electrical engineering 2 added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2773,6 +3075,8 @@ public class Manager {
                                                                                     Electrical_Engineering.AddBasicsOfElectricalEngineering2DecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2();
                                                                                     BasicsOfElectrical2_Capacity -= 1;
+                                                                                    NameOfStudentInCourseBasicsOfElectrical2.add(FullName);
+                                                                                    IdOfStudentInCourseBasicsOfElectrical2.add(StudentId);
                                                                                     System.out.println("Basics of electrical engineering 2 added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2817,6 +3121,8 @@ public class Manager {
                                                                                     Mechanical_Engineering.AddThermodynamics2DecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseThermodynamics2();
                                                                                     Thermodynamics2Capacity -= 1;
+                                                                                    NameOfStudentInCourseThermodynamics2.add(FullName);
+                                                                                    IdOfStudentInCourseThermodynamics2.add(StudentId);
                                                                                     System.out.println("Thermodynamics 2 added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2838,6 +3144,8 @@ public class Manager {
                                                                                     Mechanical_Engineering.AddThermodynamics2DecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseThermodynamics2();
                                                                                     Thermodynamics2Capacity -= 1;
+                                                                                    NameOfStudentInCourseThermodynamics2.add(FullName);
+                                                                                    IdOfStudentInCourseThermodynamics2.add(StudentId);
                                                                                     System.out.println("Thermodynamics 2 added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2874,6 +3182,8 @@ public class Manager {
                                                                                     CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayStatic());
                                                                                     CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeStatic());
                                                                                     StudentCourses.add("Static");
+                                                                                    NameOfStudentInCourseStatic.add(FullName);
+                                                                                    IdOfStudentInCourseStatic.add(StudentId);
                                                                                     Mechanical_Engineering.AddStaticDecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseStatic();
                                                                                     StaticCapacity -= 1;
@@ -2895,6 +3205,8 @@ public class Manager {
                                                                                     CourseExamDayArray.add(Mechanical_Engineering.CourseExamDayStatic());
                                                                                     CourseExamTimeArray.add(Mechanical_Engineering.CourseExamTimeStatic());
                                                                                     StudentCourses.add("Static");
+                                                                                    NameOfStudentInCourseStatic.add(FullName);
+                                                                                    IdOfStudentInCourseStatic.add(StudentId);
                                                                                     Mechanical_Engineering.AddStaticDecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseStatic();
                                                                                     StaticCapacity -= 1;
@@ -2936,6 +3248,8 @@ public class Manager {
                                                                                     Mechanical_Engineering.AddResistanceOfMaterials2DecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2();
                                                                                     ResistanceOfMaterials2Capacity -= 1;
+                                                                                    NameOfStudentInCourseResistanceOfMaterials2.add(FullName);
+                                                                                    IdOfStudentInCourseResistanceOfMaterials2.add(StudentId);
                                                                                     System.out.println("Resistance of materials 2 added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2957,6 +3271,8 @@ public class Manager {
                                                                                     Mechanical_Engineering.AddResistanceOfMaterials2DecreaseCapacity();
                                                                                     StudentSumNumberOfCourse += Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2();
                                                                                     ResistanceOfMaterials2Capacity -= 1;
+                                                                                    NameOfStudentInCourseResistanceOfMaterials2.add(FullName);
+                                                                                    IdOfStudentInCourseResistanceOfMaterials2.add(StudentId);
                                                                                     System.out.println("Resistance of materials 2 added to your courses successfully !!");
                                                                                     ok = true;
                                                                                     yes = false;
@@ -2993,6 +3309,8 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Mathematics_Department.CourseEndTimeCalculus2());
                                                                 CourseExamTimeArray.remove(Mathematics_Department.CourseExamTimeCalculus2());
                                                                 CourseExamDayArray.remove(Mathematics_Department.CourseExamDayCalculus2());
+                                                                IdOfStudentInCourseCalculus2.remove(StudentId);
+                                                                NameOfStudentInCourseCalculus2.remove(FullName);
                                                             }
                                                             if (DeleteAnswer.equals("BasicsOfMathematics")) {
                                                                 StudentSumNumberOfCourse -= Mathematics_Department.NumberOfCourseBasicsOfMathematics();
@@ -3001,6 +3319,8 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Mathematics_Department.CourseEndTimeBasicsOfMathematics());
                                                                 CourseExamTimeArray.remove(Mathematics_Department.CourseExamTimeBasicsOfMathematics());
                                                                 CourseExamDayArray.remove(Mathematics_Department.CourseExamDayBasicsOfMathematics());
+                                                                IdOfStudentInCourseBasicMath.remove(StudentId);
+                                                                NameOfStudentInCourseBasicMath.remove(FullName);
                                                             }
                                                             if (DeleteAnswer.equals("DifferentialEquations")) {
                                                                 StudentSumNumberOfCourse -= Mathematics_Department.NumberOfCourseDifferential_Equations();
@@ -3009,6 +3329,8 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Mathematics_Department.CourseEndTimeDifferential_Equations());
                                                                 CourseExamTimeArray.remove(Mathematics_Department.CourseExamTimeDifferential_Equations());
                                                                 CourseExamDayArray.remove(Mathematics_Department.CourseExamDayDifferential_Equations());
+                                                                IdOfStudentInCourseCDifferential_Equations.remove(StudentId);
+                                                                NameOfStudentInCourseDifferential_Equations.remove(FullName);
                                                             }
                                                             if (DeleteAnswer.equals("AdvanceProgramming")) {
                                                                 StudentSumNumberOfCourse -= Computer_Engineering.NumberOfCourseAdvance_Programming();
@@ -3017,6 +3339,8 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Computer_Engineering.CourseEndTimeAdvance_Programming());
                                                                 CourseExamTimeArray.remove(Computer_Engineering.CourseExamTimeAdvance_Programming());
                                                                 CourseExamDayArray.remove(Computer_Engineering.CourseExamDayAdvance_Programming());
+                                                                IdOfStudentInCourseAP.remove(StudentId);
+                                                                NameOfStudentInCourseAP.remove(FullName);
                                                             }
                                                             if (DeleteAnswer.equals("LogicCircuits")) {
                                                                 StudentSumNumberOfCourse -= Computer_Engineering.NumberOfCourseLogic_Circuits();
@@ -3025,6 +3349,8 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Computer_Engineering.CourseEndTimeLogic_Circuits());
                                                                 CourseExamTimeArray.remove(Computer_Engineering.CourseExamTimeLogic_Circuits());
                                                                 CourseExamDayArray.remove(Computer_Engineering.CourseExamDayLogic_Circuits());
+                                                                IdOfStudentInCourseLogic_Circuits.remove(StudentId);
+                                                                NameOfStudentInCourseLogic_Circuits.remove(FullName);
                                                             }
                                                             if (DeleteAnswer.equals("DiscreteStructures")) {
                                                                 StudentSumNumberOfCourse -= Computer_Engineering.NumberOfCourseDiscrete_Structures();
@@ -3033,6 +3359,8 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Computer_Engineering.CourseEndTimeDiscrete_Structures());
                                                                 CourseExamTimeArray.remove(Computer_Engineering.CourseExamTimeDiscrete_Structures());
                                                                 CourseExamDayArray.remove(Computer_Engineering.CourseExamDayDiscrete_Structures());
+                                                                IdOfStudentInCourseDiscrete_Structures.remove(StudentId);
+                                                                NameOfStudentInCourseDiscrete_Structures.remove(FullName);
                                                             }
                                                             if (DeleteAnswer.equals("Electromagnetism")) {
                                                                 StudentSumNumberOfCourse -= Electrical_Engineering.NumberOfCourseElectromagnetism();
@@ -3041,6 +3369,8 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Electrical_Engineering.CourseEndTimeElectromagnetism());
                                                                 CourseExamTimeArray.remove(Electrical_Engineering.CourseExamTimeElectromagnetism());
                                                                 CourseExamDayArray.remove(Electrical_Engineering.CourseExamDayElectromagnetism());
+                                                                IdOfStudentInCourseElectromagnetism.remove(StudentId);
+                                                                NameOfStudentInCourseElectromagnetism.remove(FullName);
                                                             }
                                                             if (DeleteAnswer.equals("Electronics2")) {
                                                                 StudentSumNumberOfCourse -= Electrical_Engineering.NumberOfCourseElectronics2();
@@ -3049,6 +3379,8 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Electrical_Engineering.CourseEndTimeElectronics2());
                                                                 CourseExamTimeArray.remove(Electrical_Engineering.CourseExamTimeElectronics2());
                                                                 CourseExamDayArray.remove(Electrical_Engineering.CourseExamDayElectronics2());
+                                                                IdOfStudentInCourseElectronics2.remove(StudentId);
+                                                                NameOfStudentInCourseElectronics2.remove(FullName);
                                                             }
                                                             if (DeleteAnswer.equals("BasicsOfElectricalEngineering2")) {
                                                                 StudentSumNumberOfCourse -= Electrical_Engineering.NumberOfCourseBasicsOfElectricalEngineering2();
@@ -3057,6 +3389,8 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Electrical_Engineering.CourseEndTimeBasicsOfElectricalEngineering2());
                                                                 CourseExamTimeArray.remove(Electrical_Engineering.CourseExamTimeBasicsOfElectricalEngineering2());
                                                                 CourseExamDayArray.remove(Electrical_Engineering.CourseExamDayBasicsOfElectricalEngineering2());
+                                                                IdOfStudentInCourseBasicsOfElectrical2.remove(StudentId);
+                                                                NameOfStudentInCourseBasicsOfElectrical2.remove(FullName);
                                                             }
                                                             if (DeleteAnswer.equals("Static")) {
                                                                 StudentSumNumberOfCourse -= Mechanical_Engineering.NumberOfCourseStatic();
@@ -3065,6 +3399,8 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Mechanical_Engineering.CourseEndTimeStatic());
                                                                 CourseExamTimeArray.remove(Mechanical_Engineering.CourseExamTimeStatic());
                                                                 CourseExamDayArray.remove(Mechanical_Engineering.CourseExamDayStatic());
+                                                                IdOfStudentInCourseStatic.remove(StudentId);
+                                                                NameOfStudentInCourseStatic.remove(FullName);
                                                             }
                                                             if (DeleteAnswer.equals("Thermodynamics2")) {
                                                                 StudentSumNumberOfCourse -= Mechanical_Engineering.NumberOfCourseThermodynamics2();
@@ -3073,6 +3409,8 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Mechanical_Engineering.CourseEndTimeThermodynamics2());
                                                                 CourseExamTimeArray.remove(Mechanical_Engineering.CourseExamTimeThermodynamics2());
                                                                 CourseExamDayArray.remove(Mechanical_Engineering.CourseExamDayThermodynamics2());
+                                                                IdOfStudentInCourseThermodynamics2.remove(StudentId);
+                                                                NameOfStudentInCourseThermodynamics2.remove(FullName);
                                                             }
                                                             if (DeleteAnswer.equals("ResistanceOfMaterials2")) {
                                                                 StudentSumNumberOfCourse -= Mechanical_Engineering.NumberOfCourseResistanceOfMaterials2();
@@ -3081,14 +3419,14 @@ public class Manager {
                                                                 CourseEndTimeArray.remove(Mechanical_Engineering.CourseEndTimeResistanceOfMaterials2());
                                                                 CourseExamTimeArray.remove(Mechanical_Engineering.CourseExamTimeResistanceOfMaterials2());
                                                                 CourseExamDayArray.remove(Mechanical_Engineering.CourseExamDayResistanceOfMaterials2());
+                                                                IdOfStudentInCourseResistanceOfMaterials2.remove(StudentId);
+                                                                NameOfStudentInCourseResistanceOfMaterials2.remove(FullName);
                                                             }
                                                             System.out.println("Delete course from your list successfully !!");
                                                         } else if (!StudentCourses.contains(DeleteAnswer)) {
                                                             System.out.println("You do not have this course in your List !!");
                                                         }
                                                         System.out.println("Your Courses are : " + StudentCourses);
-
-
                                                     }
                                                     else if (NewAnswer.equals("3") || NewAnswer.equals("Show my courses")) {
                                                         System.out.println(FullNameInput + " this is your course : " + StudentCourses + " . The total number of courses : " + StudentSumNumberOfCourse);
