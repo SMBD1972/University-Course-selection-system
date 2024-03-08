@@ -1,5 +1,3 @@
-package Course;
-
 import java.util.Scanner;
 
 
