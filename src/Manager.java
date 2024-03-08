@@ -170,8 +170,41 @@ public class Manager {
                                 Electrical_Engineering AdminMakeCourse = new Electrical_Engineering(CourseName, ProfName, CourseCode, Capacity, CourseNumber, StartTime, EndTime, ClassDay, ExamTime, ExamDay, CourseType);
                                 System.out.println("New Course make successfully !! ");
 
-                            }
+                            } else if (NewChooseDepartment.equals("Mechanical Engineering") || NewChooseDepartment.equals("4")) {
+                                System.out.println("Please enter name of the course :");
+                                String CourseName = sc.next();
+                                System.out.println("Please enter name of the Professor: ");
+                                String ProfName = sc.next();
+                                System.out.println("Please enter code of course :");
+                                int CourseCode = sc.nextInt();
+                                System.out.println("Please enter Capacity : ");
+                                int Capacity = sc.nextInt();
+                                System.out.println("Please enter number of course : ");
+                                int CourseNumber = sc.nextInt();
+                                System.out.println("Please enter Class Start time : ");
+                                double StartTime = sc.nextDouble();
+                                System.out.println("Please enter Class end time : ");
+                                double EndTime = sc.nextDouble();
+                                System.out.println("Please enter day of the Class : ");
+                                String ClassDay = sc.next();
+                                System.out.println("Please enter the time of exam : ");
+                                double ExamTime = sc.nextDouble();
+                                System.out.println("Please enter the day of exam : ");
+                                String ExamDay = sc.next();
+                                System.out.println("Please enter the Course Type : ");
+                                String CourseType = sc.next();
+                                Mechanical_Engineering AdminMakeCourse = new Mechanical_Engineering(CourseName, ProfName, CourseCode, Capacity, CourseNumber, StartTime, EndTime, ClassDay, ExamTime, ExamDay, CourseType);
+                                System.out.println("New Course make successfully !! ");
 
+                            } else {
+                                System.out.println("Your input is not valid.Please try again !! ");
+                                newOk = true;
+                            }
                         }
+
                     }
-                }}}}}
+                }
+            }
+        }
+    }
+}
