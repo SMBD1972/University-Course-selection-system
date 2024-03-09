@@ -52,6 +52,7 @@ public class Computer_Engineering {
     static Computer_Engineering Advance_Programming = new Computer_Engineering("Advance Programming", "Fazli", "40244", Advance_ProgrammingCapacity, 3, 13.30, 15, "Sunday & Tuesday", 9, "1403/4/3", "Special Course");
     static Computer_Engineering Logic_Circuits = new Computer_Engineering("Logic Circuits", "Hesabi", "40212", Logic_CircuitsCapacity, 3, 9, 10.30, "Sunday & Tuesday", 15, "1403/3/24", "Special Course");
     static Computer_Engineering Discrete_Structures = new Computer_Engineering("discrete Structures", "Zarabi Zadeh", "40115", Discrete_StructuresCapacity, 3, 10.30, 12, "Sunday & Tuesday", 9, "1403/3/22", "Special Course");
+    static Computer_Engineering ComputerLanguage = new Computer_Engineering("Computer Language", "Hamedi", "40999", 32, 3, 18, 19.30, "Sunday & Tuesday", 13, "1403/4/3", "Public Course");
 
     public static void ShowCECourse() {
 
@@ -59,6 +60,7 @@ public class Computer_Engineering {
         Advance_Programming.DisplayInfo();
         Logic_Circuits.DisplayInfo();
         Discrete_Structures.DisplayInfo();
+        ComputerLanguage.DisplayInfo();
         for (int i = 0 ; i<Manager.ComputerCourse.size();i++) {
             Manager.ComputerCourse.get(i).DisplayInfo();
         }

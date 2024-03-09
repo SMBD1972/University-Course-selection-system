@@ -69,6 +69,7 @@ public class Mathematics_Department {
     static Mathematics_Department Calculus2 = new Mathematics_Department("Calculus2", "Pournaki ", "22016", Calculus2Capacity, 4, 10.30, 12.30, "Saturday & Monday", 9, "1403/3/24", "Special Course");
     static Mathematics_Department BasicsOfMathematics = new Mathematics_Department("Basics Of Mathematics", "Ardeshir ", "22142", BasicsOfMathematicsCapacity, 4, 10.30, 12.30, "Sunday & Tuesday", 9, "1403/3/22", "Special Course");
     static Mathematics_Department Differential_Equations = new Mathematics_Department("Differential Equations", "Qajar ", "22034", Differential_EquationsCapacity, 3, 9, 10.30, "Saturday & Monday", 15, "1403/3/22", "Special Course");
+    static Mathematics_Department MathLanguage = new Mathematics_Department("MathLanguage", "Akbari ", "22094", 30, 4, 13.30, 15, "Sunday & Monday", 13, "1403/3/28", "Public Course");
 
 
     public static void ShowMCourse() {
@@ -78,6 +79,7 @@ public class Mathematics_Department {
         Calculus2.DisplayInfo();
         BasicsOfMathematics.DisplayInfo();
         Differential_Equations.DisplayInfo();
+        MathLanguage.DisplayInfo();
         for (int i = 0 ; i<Manager.MathCourse.size();i++) {
             Manager.MathCourse.get(i).DisplayInfo();
         }
