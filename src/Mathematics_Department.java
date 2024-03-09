@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -6,14 +7,14 @@ public class Mathematics_Department {
     public static int BasicsOfMathematicsCapacity = 60;
     public static int Differential_EquationsCapacity = 200;
     public String CourseName;
-    private String ProfName;
-    private String CourseCode;
+    public String ProfName;
+    public String CourseCode;
     public int Capacity;
-    private int numberOfCourse;
-    private double ClassStartTime;
-    private double ClassEndTime;
-    private double ExamTime;
-    private String TypeOfCourse;
+    public int numberOfCourse;
+    public double ClassStartTime;
+    public double ClassEndTime;
+    public double ExamTime;
+    public String TypeOfCourse;
     String ClaasDay;
     String ExamDay;
     public static String courseNameNew;
@@ -27,6 +28,8 @@ public class Mathematics_Department {
     public static double examTimeNew;
     public static String examDayNew;
     public static String courseTypeNew;
+    ArrayList<Mathematics_Department> MathCourse = new ArrayList<Mathematics_Department>();
+
 
 
     public Mathematics_Department(String CourseName, String ProfName, String CourseCode, int Capacity, int numberOfCourse, double ClassSatrtTime, double ClassEndTime, String ClassDay, double ExamTime, String ExamDay, String TypeOfCourse) {
@@ -40,6 +43,19 @@ public class Mathematics_Department {
         this.ExamTime = ExamTime;
         this.ProfName = ProfName;
         this.TypeOfCourse = TypeOfCourse;
+        this.ClaasDay = ClassDay;
+        this.ExamDay = ExamDay;
+    }
+    public Mathematics_Department(String CourseName, String ProfName, String CourseCode, int Capacity, int numberOfCourse, double ClassSatrtTime, double ClassEndTime, String ClassDay, double ExamTime, String ExamDay) {
+        this.Capacity = Capacity;
+//        this.=Capacity;
+        this.CourseCode = CourseCode;
+        this.CourseName = CourseName;
+        this.numberOfCourse = numberOfCourse;
+        this.ClassStartTime = ClassSatrtTime;
+        this.ClassEndTime = ClassEndTime;
+        this.ExamTime = ExamTime;
+        this.ProfName = ProfName;
         this.ClaasDay = ClassDay;
         this.ExamDay = ExamDay;
     }
@@ -62,7 +78,39 @@ public class Mathematics_Department {
         Calculus2.DisplayInfo();
         BasicsOfMathematics.DisplayInfo();
         Differential_Equations.DisplayInfo();
+        for (int i = 0 ; i<Manager.MathCourse.size();i++) {
+            Manager.MathCourse.get(i).DisplayInfo();
+        }
 
+
+
+    }
+
+    public static void MakeNewCourseByAdmin(){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter name of the course :");
+        courseNameNew = sc.next();
+        System.out.println("Please enter name of the Professor: ");
+        profNameNew = sc.next();
+        System.out.println("Please enter code of course :");
+        courseCodeNew = sc.next();
+        System.out.println("Please enter Capacity : ");
+        capacityNew = sc.nextInt();
+        System.out.println("Please enter number of course : ");
+        courseNumberNew = sc.nextInt();
+        System.out.println("Please enter Class Start time : ");
+        startTimeNew = sc.nextDouble();
+        System.out.println("Please enter Class end time : ");
+        endTimeNew = sc.nextDouble();
+        System.out.println("Please enter day of the Class : ");
+        classDayNew = sc.next();
+        System.out.println("Please enter the time of exam : ");
+        examTimeNew = sc.nextDouble();
+        System.out.println("Please enter the day of exam : ");
+        examDayNew = sc.next();
+        System.out.println("Please enter the Course Type : ");
+        courseTypeNew = sc.next();
 
     }
     public static void DeleteCalculus2IncreaseCapacity(){
@@ -97,6 +145,15 @@ public class Mathematics_Department {
         int a = sc.nextInt();
         BasicsOfMathematics.Capacity+=a;
         System.out.println("The Capacity of BasicsOfMathematics increased by " + a +". Now the capacity of BasicsOfMathematics is " + BasicsOfMathematics.Capacity);
+
+    }
+    public static void IncreaseAddCourseByAdmin(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How Much do you want to increase the capacity ? ");
+        int a = sc.nextInt();
+        Manager.ClassMake.Capacity+=a;
+        System.out.println();
+        System.out.println("The Capacity of BasicsOfMathematics increased by " + a +". Now the capacity of BasicsOfMathematics is " + Manager.ClassMake.Capacity);
 
     }
     public static void IncreaseDifferential_Equations(){
