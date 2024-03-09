@@ -141,6 +141,14 @@ public class Mathematics_Department {
         System.out.println("The Capacity of Calculus2 increased by " + a +". Now the capacity of Calculus2 is " + Calculus2.Capacity);
 
     }
+    public static void IncreaseMathLanguage(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How Much do you want to increase the capacity ? ");
+        int a = sc.nextInt();
+        MathLanguage.Capacity+=a;
+        System.out.println("The Capacity of Math Language increased by " + a +". Now the capacity of Calculus2 is " + MathLanguage.Capacity);
+
+    }
     public static void IncreaseBasicsOfMathematics(){
         Scanner sc = new Scanner(System.in);
         System.out.println("How Much do you want to increase the capacity ? ");

@@ -49,6 +49,7 @@ public class Electrical_Engineering {
     static Electrical_Engineering Electromagnetism = new Electrical_Engineering("Electromagnetism", "Memarian", "25733", ElectromagnetismCapacity, 3, 9, 10.30, "Sunday & Tuesday", 15, "1403/3/29", "Special Course");
     static Electrical_Engineering Electronics2 = new Electrical_Engineering("Electronics 2", "Fakhar Zadeh", "25032", Electronics2Capacity, 3, 9.30, 10, "Sunday & Tuesday", 9, "1403/4/3", "Special Course");
     static Electrical_Engineering BasicsOfElectricalEngineering2 = new Electrical_Engineering("Basics of electrical engineering 2", "Vafaiee", "25093", BasicsOfElectricalEngineering2Capacity, 3, 16.30, 18, "Sunday & Tuesday", 15, "1403/4/3", "Special Course");
+    static Electrical_Engineering ElectricalLanguage = new Electrical_Engineering("Electrical Language", "Kazemi", "25678", 40, 3, 16.30, 18, "Saturday & Monday", 13, "1403/3/17", "Public Course");
 
     public static void ShowEECourse() {
 
@@ -56,6 +57,7 @@ public class Electrical_Engineering {
         Electromagnetism.DisplayInfo();
         Electronics2.DisplayInfo();
         BasicsOfElectricalEngineering2.DisplayInfo();
+        ElectricalLanguage.DisplayInfo();
         for (int i = 0; i< Manager.ElectricalCourse.size(); i++) {
             Manager.ElectricalCourse.get(i).DisplayInfo();
         }
@@ -84,6 +86,14 @@ public class Electrical_Engineering {
         int a = sc.nextInt();
         Electromagnetism.Capacity+=a;
         System.out.println("The Capacity of Electromagnetism increased by " + a +". Now the capacity of Electromagnetism is " + Electromagnetism.Capacity);
+
+    }
+    public static void IncreaseElectricalLanguage(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How Much do you want to increase the capacity ? ");
+        int a = sc.nextInt();
+        ElectricalLanguage.Capacity+=a;
+        System.out.println("The Capacity of Electrical Language increased by " + a +". Now the capacity of Electromagnetism is " + ElectricalLanguage.Capacity);
 
     }
     public static void IncreaseAddCourseByAdmin(){

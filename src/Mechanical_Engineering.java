@@ -49,12 +49,14 @@ public class Mechanical_Engineering {
     static Mechanical_Engineering Thermodynamics2 = new Mechanical_Engineering("Thermodynamics 2", "Saieedi", "28162", Thermodynamics2Capacity, 3, 9, 10.5, "Sunday & Tuesaday", 15.5, "1403/03/30", "Special Course");
     static Mechanical_Engineering Static = new Mechanical_Engineering("Static", "Mohammadi", "28261", StaticCapacity, 3, 13.5, 15, "Saturday & Monday ", 15.5, "1403/03/22", "Special Course");
     static Mechanical_Engineering ResistanceOfMaterials2 = new Mechanical_Engineering("Resistance of materials 2", "Movahedi", "28263", ResistanceOfMaterials2Capacity, 2, 10.5, 12.5, "Saturday", 9, "1403/03/26", "Special Course");
+    static Mechanical_Engineering MechanicalLanguage = new Mechanical_Engineering("Mechanical Language", "Firouzi", "28999", 35, 3, 8, 9.30, "Sunday & Tuesaday", 15.5, "1403/03/21", "Public Course");
 
     public static void ShowMECourse() {
         System.out.println("These are Mechanical Engineering Department Courses:");
         Thermodynamics2.DisplayInfo();
         Static.DisplayInfo();
         ResistanceOfMaterials2.DisplayInfo();
+        MechanicalLanguage.DisplayInfo();
 //        PublicCourseMechanical_Engineering.
         for (int i = 0; i< Manager.MechanicCourse.size(); i++) {
             Manager.MechanicCourse.get(i).DisplayInfo();
@@ -91,7 +93,15 @@ public class Mechanical_Engineering {
         System.out.println("How Much do you want to increase the capacity ? ");
         int a = sc.nextInt();
         Manager.MechClassMake.Capacity+=a;
-        System.out.println("The Capacity of Thermodynamics2 increased by " + a +". Now the capacity of Thermodynamics2 is " + Manager.MechClassMake.Capacity);
+        System.out.println("The Capacity of " + Manager.MechClassMake.CourseName + "  increased by " + a +". Now the capacity of Thermodynamics2 is " + Manager.MechClassMake.Capacity);
+
+    }
+    public static void IncreaseMechanicalLanguage(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How Much do you want to increase the capacity ? ");
+        int a = sc.nextInt();
+        MechanicalLanguage.Capacity+=a;
+        System.out.println("The Capacity of Mechanical Language increased by " + a +". Now the capacity of Thermodynamics2 is " + MechanicalLanguage.Capacity);
 
     }
     public static void IncreaseStatic(){

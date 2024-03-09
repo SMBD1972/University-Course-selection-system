@@ -99,6 +99,14 @@ public class Computer_Engineering {
         System.out.println("The Capacity of Logic_Circuits increased by " + a +". Now the capacity of Logic_Circuits is " + Logic_Circuits.Capacity);
 
     }
+    public static void IncreaseComputerLanguage(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How Much do you want to increase the capacity ? ");
+        int a = sc.nextInt();
+        ComputerLanguage.Capacity+=a;
+        System.out.println("The Capacity of Computer Language increased by " + a +". Now the capacity of Logic_Circuits is " + ComputerLanguage.Capacity);
+
+    }
     public static void IncreaseDiscrete_Structures(){
         Scanner sc = new Scanner(System.in);
         System.out.println("How Much do you want to increase the capacity ? ");
